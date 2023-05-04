@@ -1,0 +1,29 @@
+.navbar {
+  height: 7rem;
+  font-size: larger;
+}
+
+.imgLogo {
+  width: 7rem;
+  padding-left: 35px;
+}
+
+.iconLenguage {
+  width: 30px;
+}
+
+.my-navbar-toggler {
+  margin-right: 30px;
+}
+
+#basic-navbar-nav {
+  background-color: rgba(37, 52, 57, 255);
+}
+
+.navbar-nav {
+  align-items: center;
+}
+
+.botonIdioma {
+  margin-right: 50px;
+}
