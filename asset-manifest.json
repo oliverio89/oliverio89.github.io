@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.css": "/oliverio89.github.io/static/css/main.d8a6fb2c.css",
+    "main.js": "/oliverio89.github.io/static/js/main.63bd15b8.js",
+    "static/js/787.1ed0c42c.chunk.js": "/oliverio89.github.io/static/js/787.1ed0c42c.chunk.js",
+    "static/media/IMG_9956.JPG": "/oliverio89.github.io/static/media/IMG_9956.f6b76481adf2babfd3f9.JPG",
+    "static/media/OliDeVgrey.png": "/oliverio89.github.io/static/media/OliDeVgrey.7a7c41a47e6b66cc5528.png",
+    "index.html": "/oliverio89.github.io/index.html",
+    "main.d8a6fb2c.css.map": "/oliverio89.github.io/static/css/main.d8a6fb2c.css.map",
+    "main.63bd15b8.js.map": "/oliverio89.github.io/static/js/main.63bd15b8.js.map",
+    "787.1ed0c42c.chunk.js.map": "/oliverio89.github.io/static/js/787.1ed0c42c.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.d8a6fb2c.css",
+    "static/js/main.63bd15b8.js"
+  ]
+}
