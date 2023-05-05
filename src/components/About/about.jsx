@@ -3,9 +3,9 @@ import "./about.css";
 import myPhoto from "../../resources/images/IMG_9956.JPG";
 import Tilt from "react-parallax-tilt";
 import { LanguageContext } from "../../contexts/LanguageContext.js";
-import { FaLinkedinIn, FaGithub } from "react-icons/fa";
+import { FaLinkedinIn } from "react-icons/fa";
 import { Container, Row, Col } from "react-bootstrap";
-import { DiGithubBadge, AiFillLinkedin } from "react-icons/di";
+import { DiGithubBadge } from "react-icons/di";
 
 function About() {
   const { language, translations } = useContext(LanguageContext);
