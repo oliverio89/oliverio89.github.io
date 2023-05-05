@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "https://oliverio89.github.io/oliverio89.github.io/static/css/main.d8a6fb2c.css",
-    "main.js": "https://oliverio89.github.io/oliverio89.github.io/static/js/main.02259a85.js",
-    "static/js/787.99ea80f7.chunk.js": "https://oliverio89.github.io/oliverio89.github.io/static/js/787.99ea80f7.chunk.js",
-    "static/media/IMG_9956.JPG": "https://oliverio89.github.io/oliverio89.github.io/static/media/IMG_9956.f6b76481adf2babfd3f9.JPG",
-    "static/media/OliDeVgrey.png": "https://oliverio89.github.io/oliverio89.github.io/static/media/OliDeVgrey.7a7c41a47e6b66cc5528.png",
-    "index.html": "https://oliverio89.github.io/oliverio89.github.io/index.html",
-    "main.d8a6fb2c.css.map": "https://oliverio89.github.io/oliverio89.github.io/static/css/main.d8a6fb2c.css.map",
-    "main.02259a85.js.map": "https://oliverio89.github.io/oliverio89.github.io/static/js/main.02259a85.js.map",
-    "787.99ea80f7.chunk.js.map": "https://oliverio89.github.io/oliverio89.github.io/static/js/787.99ea80f7.chunk.js.map"
+    "main.css": "https://oliverio89.github.io/static/css/main.d8a6fb2c.css",
+    "main.js": "https://oliverio89.github.io/static/js/main.065cbc33.js",
+    "static/js/787.99ea80f7.chunk.js": "https://oliverio89.github.io/static/js/787.99ea80f7.chunk.js",
+    "static/media/IMG_9956.JPG": "https://oliverio89.github.io/static/media/IMG_9956.f6b76481adf2babfd3f9.JPG",
+    "static/media/OliDeVgrey.png": "https://oliverio89.github.io/static/media/OliDeVgrey.7a7c41a47e6b66cc5528.png",
+    "index.html": "https://oliverio89.github.io/index.html",
+    "main.d8a6fb2c.css.map": "https://oliverio89.github.io/static/css/main.d8a6fb2c.css.map",
+    "main.065cbc33.js.map": "https://oliverio89.github.io/static/js/main.065cbc33.js.map",
+    "787.99ea80f7.chunk.js.map": "https://oliverio89.github.io/static/js/787.99ea80f7.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.d8a6fb2c.css",
-    "static/js/main.02259a85.js"
+    "static/js/main.065cbc33.js"
   ]
 }
