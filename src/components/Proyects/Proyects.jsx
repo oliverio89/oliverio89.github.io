@@ -24,22 +24,24 @@ function Projects() {
         <Row my={2} className=" ">
           {projects.map((project) => (
             <Col className="col-6 p-4">
-              <MDBCard
-                background="dark opacit"
-                className="text-white w-150 p-6"
-              >
-                <Tilt>
-                  <MDBCardImage overlay src={project.image} alt="..." />
-                  <MDBCardOverlay
-                    className="p-5 mask"
-                    style={{ backgroundColor: "rgba(0, 0, 0, 0.6)" }}
-                  >
-                    <MDBCardTitle>{project.title}</MDBCardTitle>
-                    <MDBCardText>{project.subtitle}</MDBCardText>
-                    <MDBCardText>{project.description}</MDBCardText>
-                  </MDBCardOverlay>
-                </Tilt>
-              </MDBCard>
+              <a id="href" href={project.link}>
+                <MDBCard
+                  background="dark opacit"
+                  className="text-white w-150 p-6"
+                >
+                  <Tilt>
+                    <MDBCardImage overlay src={project.image} alt="..." />
+                    <MDBCardOverlay
+                      className="p-5 mask"
+                      style={{ backgroundColor: "rgba(0, 0, 0, 0.6)" }}
+                    >
+                      <MDBCardTitle>{project.title}</MDBCardTitle>
+                      <MDBCardText>{project.subtitle}</MDBCardText>
+                      <MDBCardText>{project.description}</MDBCardText>
+                    </MDBCardOverlay>
+                  </Tilt>
+                </MDBCard>
+              </a>
             </Col>
           ))}
         </Row>

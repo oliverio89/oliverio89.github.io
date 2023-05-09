@@ -13,7 +13,7 @@ export const projects = [
     title: "Circle",
     subtitle: "MERN Stack",
     description:
-      "Aplicación diseñada para un juego de rol utilizando todo lo que se, con la aydua de un amguito",
+      "Aplicación diseñada en un grupo internacional, con la premisa y dificultad de realizar un proyecto mezclando un muro de publicaciones como el Facebook y la cercania de geolocalización de nuestros dispositivos como Tinder. Un gran proyecto que me ayudó mucho a desarrollar ",
     image: "https://i.imgur.com/nfvTz9E.png",
     link: "https://circle0.netlify.app/",
   },
