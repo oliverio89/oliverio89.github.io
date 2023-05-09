@@ -14,7 +14,7 @@ const translations = {
     EducaciónCertificaciones: "Certificaciones",
     TestimoniosReferencias: "Referencias",
     Contacto: "Contacto",
-    Stack: "Stack",
+    Stack: "Tecnologías aplicadas",
     Aplicaciones: "Aplicaciones que he desarrollado",
   },
   en: {

@@ -16,11 +16,7 @@ function About() {
         <Row className=" d-flex justify-content-center ">
           <Col className="colAbout justify-content-center">
             <div>
-              <h1 className="p-2">
-                {translations[language].titulo}
-                <br className="hidden lg:inline-block" />
-                {translations[language].subtitulo}
-              </h1>
+              <h1 className="p-2">{translations[language].titulo}</h1>
               <p className="mb-8 leading-relaxed p-2">
                 {translations[language].descriptionAbout}
               </p>
@@ -44,7 +40,7 @@ function About() {
               </div>
             </div>
           </Col>
-          <Col className="justify-content-center ">
+          <Col className="justify-content-center box">
             <Tilt>
               <img src={myPhoto} className="imgMyPhoto" alt="myPhoto" />
             </Tilt>
