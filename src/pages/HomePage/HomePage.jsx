@@ -10,7 +10,7 @@ import KnowledgeStack from "../../components/Stack/stack";
 
 const HomePage = () => {
   return (
-    <>
+    <section className="homepage">
       <LanguageProvider>
         <div>
           {" "}
@@ -33,7 +33,7 @@ const HomePage = () => {
           <Footer />{" "}
         </div>{" "}
       </LanguageProvider>
-    </>
+    </section>
   );
 };
 

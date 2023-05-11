@@ -10,7 +10,7 @@ function Navbarr() {
   const { language, translations, changeLanguage } =
     useContext(LanguageContext);
 
-  const [lang, setIdioma] = useState("es");
+  const [lang, setIdioma] = useState("en");
 
   const handleLanguageChange = () => {
     setIdioma(lang === "es" ? "en" : "es");
@@ -21,7 +21,7 @@ function Navbarr() {
     <Navbar
       bg="transparent"
       expand="lg"
-      className="navbar-transparent navbar-light "
+      className="navbar-transparent navbar-light navbar"
     >
       <Navbar.Brand href="#">
         <img src={logo} className="imgLogo" alt="imgLogo" />
@@ -46,10 +46,7 @@ function Navbarr() {
           </Nav.Link>
         </Nav>
       </Navbar.Collapse>
-      <button
-        onClick={() => handleLanguageChange()}
-        className="botonIdioma bg-success bg-opacity-10"
-      >
+      <button onClick={() => handleLanguageChange()} className="botonIdioma ">
         <img
           className="iconLenguage"
           src={lang === "es" ? espana : inglaterra}

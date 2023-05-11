@@ -1,6 +1,7 @@
 .navbar {
   height: 7rem;
   font-size: larger;
+  background-color: #223831;
 }
 
 .imgLogo {
@@ -16,14 +17,12 @@
   margin-right: 30px;
 }
 
-#basic-navbar-nav {
-  background-color: rgba(37, 52, 57, 255);
-}
-
 .navbar-nav {
   align-items: center;
 }
 
 .botonIdioma {
   margin-right: 50px;
+  background-color: #223831;
+  border: 1px solid white;
 }

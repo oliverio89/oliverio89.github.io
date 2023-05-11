@@ -16,7 +16,7 @@ function Projects() {
   const { language, translations } = useContext(LanguageContext);
 
   return (
-    <section id="projects" className=" container mb-5 ">
+    <section id="projects" className=" container m-5">
       <div>
         <div className="">
           <h1 className="mb-5">{translations[language].Aplicaciones}</h1>
@@ -24,7 +24,7 @@ function Projects() {
         <Row my={2} className=" ">
           {projects.map((project) => (
             <Col className="col-6 p-4">
-              <a id="href" href={project.link}>
+              <a id="href" href={project.link} target="_blank">
                 <MDBCard
                   background="dark opacit"
                   className="text-white w-150 p-6"

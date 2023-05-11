@@ -4,8 +4,7 @@ export const projects = [
     subtitle: "MERN Stack",
     description:
       "Dungeonize es una herramienta web que permite a los usuarios crear y personalizar mapas de mazmorras para juegos de rol y aventuras en un formato visualmente atractivo y fácil de usar. Ofrece una amplia variedad de opciones y características para hacer que la experiencia de construir y diseñar mapas de mazmorras sea agradable y sencilla.",
-    image:
-      "https://media.licdn.com/dms/image/C4D22AQFAAQdG0t5B7g/feedshare-shrink_800/0/1669051253377?e=1683763200&v=beta&t=fKoTGWGTQ_SeHgpzT2HeZ5hA7yQ6vAbRM389w5wwYSg",
+    image: "https://i.imgur.com/XPTXAWE.png",
     link: "https://dungeonize.fly.dev/",
   },
 

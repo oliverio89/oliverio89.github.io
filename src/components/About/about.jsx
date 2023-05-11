@@ -20,7 +20,7 @@ function About() {
               <p className="mb-8 leading-relaxed p-2">
                 {translations[language].descriptionAbout}
               </p>
-              <div className="flex justify-center p-2">
+              <div>
                 <a
                   href="https://www.linkedin.com/in/victor-wdfs"
                   target="_blank"
@@ -40,7 +40,7 @@ function About() {
               </div>
             </div>
           </Col>
-          <Col className="justify-content-center box">
+          <Col className="boxtilt">
             <Tilt>
               <img src={myPhoto} className="imgMyPhoto" alt="myPhoto" />
             </Tilt>

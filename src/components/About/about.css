@@ -1,14 +1,6 @@
-/* .colImg {
-  margin-top: -70px;
-}
-
-.colAbout {
-  margin-top: -70px;
-} */
-
 .imgMyPhoto {
   width: 400px;
-  height: 400px;
+  height: 328px;
   border-radius: 50px;
   box-shadow: 3px 3px gray, -1em 0 0.4em grey;
 }
@@ -16,4 +8,13 @@
 #about {
   height: 1000px;
   margin-bottom: 300px;
+}
+
+.boxtilt {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.iconosAbout {
+  display: flex;
 }
