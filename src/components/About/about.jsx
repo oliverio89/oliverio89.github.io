@@ -16,7 +16,9 @@ function About() {
         <Row className=" d-flex justify-content-center ">
           <Col className="colAbout justify-content-center">
             <div>
-              <h1 className="p-2">{translations[language].titulo}</h1>
+              <h1 className="p-2 title">
+                <span>{translations[language].titulo}</span>
+              </h1>
               <p className="mb-8 leading-relaxed p-2">
                 {translations[language].descriptionAbout}
               </p>
