@@ -1,7 +1,11 @@
 .navbar {
   height: 7rem;
+  width: auto;
   font-size: larger;
   background-color: #223831;
+  background-color: aliceblue;
+  position: relative;
+  z-index: 1000;
 }
 
 .imgLogo {
@@ -14,15 +18,18 @@
 }
 
 .my-navbar-toggler {
-  margin-right: 30px;
+  margin: 30px;
 }
 
 .navbar-nav {
   align-items: center;
+  background-color: rgba(34, 56, 49, 0.7);
+  padding-bottom: 50px;
 }
 
 .botonIdioma {
   margin-right: 50px;
   background-color: #223831;
   border: 1px solid white;
+  border-radius: 500px;
 }

@@ -5,3 +5,13 @@
 ·#href {
   color: white;
 }
+
+.texto-ocultar {
+  display: none;
+}
+
+@media (min-width: 1400px) {
+  .texto-ocultar {
+    display: block; /* Vuelve a mostrar el texto en pantallas más grandes */
+  }
+}

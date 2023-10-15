@@ -1,10 +1,18 @@
-#stack {
-  height: 550px;
-}
-
 .iconosStacks {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+
+.animate__flipInY:hover {
+  display: inline-block;
+  animation: bounce; /* referring directly to the animation's @keyframe declaration */
+  animation-duration: 1s; /* don't forget to set a duration! */
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
 }

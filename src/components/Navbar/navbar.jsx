@@ -19,40 +19,44 @@ function Navbarr() {
 
   return (
     <Navbar
+      collapseOnSelect
       bg="transparent"
       expand="lg"
-      className="navbar-transparent navbar-light navbar"
+      // fixed="top"             // con esto ahcemos que quede la barra de navegación arriba, y se mantenga por la web.
+      className=" navbar-white m-3 "
     >
       <Navbar.Brand href="#">
-        <img src={logo} className="imgLogo" alt="imgLogo" />
+        <img src={logo} className="imgLogo " alt="imgLogo" />
       </Navbar.Brand>
       <Navbar.Toggle
-        aria-controls="basic-navbar-nav "
+        aria-controls="responsive-navbar-nav "
         className="my-navbar-toggler "
       />
-      <Navbar.Collapse
-        id="basic-navbar-nav"
-        className="d-flex align-items-center justify-content-center"
-      >
-        <Nav className="mr-auto navbarSub">
+      <Navbar.Collapse id="responsive-navbar-nav ">
+        <Nav className="m-auto">
           <Nav.Link href="#projects" className="text-white p-5">
             {translations[language].Proyectos}
           </Nav.Link>
-          <Nav.Link href="#" className="text-white p-5">
+          <Nav.Link href="#aboutme" className="text-white p-5">
             {translations[language].AcercaDeMí}
           </Nav.Link>
-          <Nav.Link href="#contact" className="text-white p-5">
+          <Nav.Link href="#stack" className="text-white p-5">
             {translations[language].Stack}
           </Nav.Link>
         </Nav>
+        <Nav className="m-auto">
+          <button
+            onClick={() => handleLanguageChange()}
+            className="botonIdioma "
+          >
+            <img
+              className="iconLenguage"
+              src={lang === "es" ? espana : inglaterra}
+              alt={lang === "es" ? "Español" : "English"}
+            />
+          </button>
+        </Nav>
       </Navbar.Collapse>
-      <button onClick={() => handleLanguageChange()} className="botonIdioma ">
-        <img
-          className="iconLenguage"
-          src={lang === "es" ? espana : inglaterra}
-          alt={lang === "es" ? "Español" : "English"}
-        />
-      </button>
     </Navbar>
   );
 }

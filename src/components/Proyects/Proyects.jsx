@@ -23,7 +23,7 @@ function Projects() {
         </div>
         <Row my={2} className=" ">
           {projects.map((project) => (
-            <Col className="col-6 p-4">
+            <Col xs={{ span: 12 }} md={{ span: 6 }} className="col-6 p-4">
               <a id="href" href={project.link} target="_blank">
                 <MDBCard
                   background="dark opacit"
@@ -37,7 +37,9 @@ function Projects() {
                     >
                       <MDBCardTitle>{project.title}</MDBCardTitle>
                       <MDBCardText>{project.subtitle}</MDBCardText>
-                      <MDBCardText>{project.description}</MDBCardText>
+                      <MDBCardText className="texto-ocultar">
+                        {project.description}
+                      </MDBCardText>
                     </MDBCardOverlay>
                   </Tilt>
                 </MDBCard>
