@@ -24,7 +24,7 @@ function Projects() {
         <Row my={2} className=" ">
           {projects.map((project) => (
             <Col xs={{ span: 12 }} md={{ span: 6 }} className="col-6 p-4">
-              <a id="href" href={project.link} target="_blank">
+              <a id="href" href={project.link} target="blank">
                 <MDBCard
                   background="dark opacit"
                   className="text-white w-150 p-6"

@@ -11,18 +11,18 @@ function About() {
   const { language, translations } = useContext(LanguageContext);
 
   return (
-    <section id="aboutme container d-flex mb-5">
+    <section id="aboutme container d-flex mb-3">
+      <h1 className="m-5 title">
+        <span>{translations[language].titulo}</span>
+      </h1>
       <Container className="d-flex aboutEnd align-items-center p-5 mb-5 ">
-        <Row className=" d-flex">
+        <Row className="d-flex">
           <Col
             xs={{ order: 2, span: 12 }}
             lg={{ order: 1, span: 6 }}
             className="colAbout "
           >
             <div>
-              <h1 className="p-2 title">
-                <span>{translations[language].titulo}</span>
-              </h1>
               <p className="mb-8 leading-relaxed p-2">
                 {translations[language].descriptionAbout}
               </p>

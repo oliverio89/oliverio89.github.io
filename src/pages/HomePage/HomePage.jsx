@@ -11,19 +11,19 @@ const HomePage = () => {
   return (
     <section className="homepage">
       <LanguageProvider>
-        <div className="mb-1">
+        <div className="m-3">
           {" "}
           <Navbar />{" "}
         </div>
-        <div className="mb-6">
+        <div className="m-6">
           {" "}
           <About />{" "}
         </div>
-        <div className="mb-4">
+        <div className="m-6">
           {" "}
           <KnowledgeStack />{" "}
         </div>
-        <div className="mb-4">
+        <div className="m-6">
           {" "}
           <Projects />{" "}
         </div>{" "}

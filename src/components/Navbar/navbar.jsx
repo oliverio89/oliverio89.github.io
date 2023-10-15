@@ -22,7 +22,7 @@ function Navbarr() {
       collapseOnSelect
       bg="transparent"
       expand="lg"
-      // fixed="top"             // con esto ahcemos que quede la barra de navegación arriba, y se mantenga por la web.
+      fixed="top"
       className=" navbar-white m-3 "
     >
       <Navbar.Brand href="#">
