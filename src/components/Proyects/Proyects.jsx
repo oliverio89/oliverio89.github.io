@@ -32,7 +32,7 @@ function Projects() {
                   <Tilt>
                     <MDBCardImage overlay src={project.image} alt="..." />
                     <MDBCardOverlay
-                      className="p-5 mask"
+                      className="p-4 mask"
                       style={{ backgroundColor: "rgba(0, 0, 0, 0.6)" }}
                     >
                       <MDBCardTitle>{project.title}</MDBCardTitle>

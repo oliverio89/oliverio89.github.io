@@ -5,4 +5,7 @@
   font-family: Roboto;
   justify-content: center;
   font-family: monospace;
+  background-image: url(/src/resources/images/83-838296_web-designer-professional-website-background-images.jpg);
+  background-size: cover;
+  background-attachment: fixed;
 }

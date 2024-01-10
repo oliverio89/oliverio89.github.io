@@ -2,7 +2,7 @@
   height: 7rem;
   width: auto;
   font-size: larger;
-  background-color: rgba(37, 52, 57, 0.7);
+  background-color: rgba(0, 0, 0, 0.5);
   background-color: aliceblue;
   position: relative;
   z-index: 1000;
@@ -28,7 +28,7 @@
 
 .botonIdioma {
   margin-right: 50px;
-  background-color: rgba(37, 52, 57, 0.7);
+  background-color: rgba(0, 0, 0, 0.5);
   border: 1px solid white;
   border-radius: 500px;
 }

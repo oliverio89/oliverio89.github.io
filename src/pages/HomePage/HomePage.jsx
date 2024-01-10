@@ -6,6 +6,7 @@ import Projects from "../../components/Proyects/Proyects";
 import Footer from "../../components/Footer/footer.jsx";
 import Navbar from "../../components/Navbar/navbar";
 import KnowledgeStack from "../../components/Stack/stack";
+import NewComponent from "../../components/NewComponent/NewComponent.jsx";
 
 const HomePage = () => {
   return (
@@ -18,6 +19,10 @@ const HomePage = () => {
         <div className="m-6">
           {" "}
           <About />{" "}
+        </div>
+        <div className="m-6">
+          {" "}
+          <NewComponent />{" "}
         </div>
         <div className="m-6">
           {" "}

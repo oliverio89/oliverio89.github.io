@@ -12,9 +12,6 @@ function About() {
 
   return (
     <section id="aboutme container d-flex mb-3">
-      <h1 className="m-5 title">
-        <span>{translations[language].titulo}</span>
-      </h1>
       <Container className="d-flex aboutEnd align-items-center p-5 mb-5 ">
         <Row className="d-flex">
           <Col
@@ -22,6 +19,9 @@ function About() {
             lg={{ order: 1, span: 6 }}
             className="colAbout "
           >
+            <h1 className="m-5 title">
+              <span>{translations[language].titulo}</span>
+            </h1>
             <div>
               <p className="mb-8 leading-relaxed p-2">
                 {translations[language].descriptionAbout}

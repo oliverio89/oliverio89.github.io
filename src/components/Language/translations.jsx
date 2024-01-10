@@ -4,9 +4,9 @@ const translations = {
     subtitulo: "Me encanta construir aplicaciones web.",
     boton: "Cambiar idioma a inglés",
     descripción:
-      "Desarrollador web junior con pasión por la creación de sitios web dinámicos y atractivos. Doy soluciones eficaces para problemas complejos y brindo ayuda a las empresas a tener presencia en línea. Estoy emocionado de seguir aprendiendo y creciendo como desarrollador, y espero poder ayudar a las empresas a alcanzar sus objetivos en línea.",
+      "Aporto soluciones eficaces para problemas complejos y brindo ayuda a las empresas a tener presencia en línea. Estoy emocionado de seguir aprendiendo y creciendo como desarrollador, y espero poder ayudar a las empresas a alcanzar sus objetivos en línea.",
     descriptionAbout:
-      "Desarrollador web junior con pasión por la creación de sitios web dinámicos y atractivos. Doy soluciones eficaces para problemas complejos y brindo ayuda a las empresas a tener presencia en línea. Estoy emocionado de seguir aprendiendo y creciendo como desarrollador, y espero poder ayudar a las empresas a alcanzar sus objetivos en línea.",
+      "Actualmente Coformador de un bootcamp de DEsarrollo web, intento compartir con mis alumnos todo lo que he ido aprendiendo en mi vida como programor. Y como experto en Full STack brindo soporte a empresas como consultor aportando soluciones eficaces para problemas complejos yapra que las empresas tengan mayor presencia en línea. ",
     AcercaDeMí: "Acerca de mí",
     Habilidades: "Habilidades",
     Proyectos: "Proyectos",

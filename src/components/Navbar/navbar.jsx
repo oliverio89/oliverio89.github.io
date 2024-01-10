@@ -1,6 +1,6 @@
 import "./navbar.css";
 import { Nav, Navbar } from "react-bootstrap";
-import logo from "../../resources/images/OliDeVgrey.png";
+import logo from "../../resources/images/OliDeVT-removebg-preview.png";
 import React, { useState, useContext } from "react";
 import espana from "../../resources/images/icons8-spain-48.png";
 import inglaterra from "../../resources/images/icons8-united-kingdom-48.png";
