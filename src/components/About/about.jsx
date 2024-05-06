@@ -19,7 +19,7 @@ function About() {
             lg={{ order: 1, span: 6 }}
             className="colAbout "
           >
-            <h1 className="m-5 title">
+            <h1 className="ms-1 mt-5 title">
               <span>{translations[language].titulo}</span>
             </h1>
             <div>

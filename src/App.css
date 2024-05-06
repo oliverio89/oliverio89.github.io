@@ -1,6 +1,6 @@
 .App {
   display: flex;
-  background-color: rgba(37, 52, 57, 255);
+  /* background-color: rgba(37, 52, 57, 255); */
   color: white;
   font-family: Roboto;
   justify-content: center;
@@ -8,4 +8,6 @@
   background-image: url(/src/resources/images/83-838296_web-designer-professional-website-background-images.jpg);
   background-size: cover;
   background-attachment: fixed;
+  backdrop-filter: blur(500px) opacity(1);
+  text-shadow: 2px 2px 5px #333, 5px 5px 10px #55535362;
 }

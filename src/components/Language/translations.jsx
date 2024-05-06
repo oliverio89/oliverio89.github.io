@@ -6,7 +6,7 @@ const translations = {
     descripción:
       "Aporto soluciones eficaces para problemas complejos y brindo ayuda a las empresas a tener presencia en línea. Estoy emocionado de seguir aprendiendo y creciendo como desarrollador, y espero poder ayudar a las empresas a alcanzar sus objetivos en línea.",
     descriptionAbout:
-      "Actualmente Coformador de un bootcamp de DEsarrollo web, intento compartir con mis alumnos todo lo que he ido aprendiendo en mi vida como programor. Y como experto en Full STack brindo soporte a empresas como consultor aportando soluciones eficaces para problemas complejos yapra que las empresas tengan mayor presencia en línea. ",
+      "Actualmente Coformador de un bootcamp de Desarrollo web, intento compartir con mis alumn@s todo lo que he ido aprendiendo en mi vida como programador. Y como experto en Full Stack brindo soporte a empresas como consultor aportando soluciones eficaces para problemas complejos y para que las empresas tengan mayor presencia en línea. ",
     AcercaDeMí: "Acerca de mí",
     Habilidades: "Habilidades",
     Proyectos: "Proyectos",
