@@ -1,7 +1,7 @@
 import React from "react";
-import "./NewComponent.css";
+import "./Experience.css";
 
-function NewComponent() {
+function Experience() {
   return (
     <div class="container">
       <div class="main-timeline">
@@ -11,22 +11,38 @@ function NewComponent() {
             <div class="date-outer">
               <span class="date">
                 <span class="month">Actualmente</span>
-                <span class="year">2023</span>
+                <span class="year">2025</span>
               </span>
             </div>
           </div>
           <div class="timeline-content">
-            <h5 class="title">Co-formador: "Factoría F5"</h5>
+            <h5 class="title">Informático: "In Genero"</h5>
             <p class="description">
-              Hoy me encuentro formando a otras personas que como yo, vemos un
-              mundo de posibildiades en la programación. En este caso, me
-              encuentro formando a personas en el desarrollo web con React y
-              Node.js. Esta gran oportunidad me la dió Factoría F5, una escuela
-              de programación que apuesta por la formación de calidad y por la
-              inserción laboral de sus alumnos. Especializandome más aún en
-              React y Node.js. <br />
-              Como suelen decir: "Aprender enseñando es la mejor forma de
-              aprender".
+              Desarrollo y mantenimiento de aplicaciones web, implementación de
+              soluciones tecnológicas y gestión de proyectos digitales.
+              Colaboración en la transformación digital de la organización y
+              mejora de procesos internos.
+            </p>
+          </div>
+        </div>
+
+        <div class="timeline">
+          <div class="icon"></div>
+          <div class="date-content">
+            <div class="date-outer">
+              <span class="date">
+                <span class="month">18 meses</span>
+                <span class="year">2024</span>
+              </span>
+            </div>
+          </div>
+          <div class="timeline-content">
+            <h5 class="title">Full Stack Developer: "Freelance"</h5>
+            <p class="description">
+              Desarrollo de proyectos web como profesional independiente,
+              implementando soluciones completas desde el frontend hasta el
+              backend. Especialización en React, Node.js y tecnologías modernas
+              de desarrollo web.
             </p>
           </div>
         </div>
@@ -98,4 +114,4 @@ function NewComponent() {
   );
 }
 
-export default NewComponent;
+export default Experience;

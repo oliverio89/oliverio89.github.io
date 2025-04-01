@@ -6,7 +6,7 @@ import Projects from "../../components/Proyects/Proyects";
 import Footer from "../../components/Footer/footer.jsx";
 import Navbar from "../../components/Navbar/navbar";
 import KnowledgeStack from "../../components/Stack/stack";
-import NewComponent from "../../components/NewComponent/NewComponent.jsx";
+import Experience from "../../components/Experience/Experience.jsx";
 
 const HomePage = () => {
   return (
@@ -22,7 +22,7 @@ const HomePage = () => {
         </div>
         <div className="m-6">
           {" "}
-          <NewComponent />{" "}
+          <Experience />{" "}
         </div>
         <div className="m-6">
           {" "}
