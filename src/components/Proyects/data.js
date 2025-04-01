@@ -4,7 +4,7 @@ export const projects = [
     subtitle: "MERN Stack",
     description:
       "Dungeonize es una herramienta web que permite a los usuarios crear y personalizar mapas de mazmorras para juegos de rol y aventuras en un formato visualmente atractivo y fácil de usar. Ofrece una amplia variedad de opciones y características para hacer que la experiencia de construir y diseñar mapas de mazmorras sea agradable y sencilla.",
-    image: "https://i.imgur.com/XPTXAWE.png",
+    image: "/src/resources/images/VíctorMoreno.jpg",
     link: "https://dungeonize.fly.dev/",
   },
 
@@ -17,11 +17,11 @@ export const projects = [
     link: "https://circle0.netlify.app/",
   },
   {
-    title: "Portal Empleo Paradores",
-    subtitle: "Laravel - PHP",
+    title: "Nosotras.app",
+    subtitle: "Kotlin - Firebase, Django, Html, Css, Javascript (webView)",
     description:
-      "Dungeonize es una herramienta web que permite a los usuarios crear y personalizar mapas de mazmorras para juegos de rol y aventuras en un formato visualmente atractivo y fácil de usar. Ofrece una amplia variedad de opciones y características para hacer que la experiencia de construir y diseñar mapas de mazmorras sea agradable y sencilla.",
-    image: "https://i.imgur.com/KchoggR.png",
-    link: "https://paradores.portaldelcandidato.es/paradores",
+      "Aplicación móvil especializada en localizar recursos para personas que ejercen la prostitución y víctimas de trata. Incluye geolocalización de servicios médicos, legales y sociales, botón de emergencia, y red de apoyo. Ofrece recursos categorizados en atención social, salud, ayuda jurídica, empleo, mediación y ocio.",
+    image: "/logo_nosotras.png",
+    link: "https://play.google.com/store/apps/details?id=com.app.nosotras",
   },
 ];

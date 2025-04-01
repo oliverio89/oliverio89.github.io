@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import "./about.css";
-import MyNewPhoto from "../../resources/images/NewImage.png";
+import VictorMoreno from "../../resources/images/VíctorMoreno-removebg-preview.png";
 import Tilt from "react-parallax-tilt";
 import { LanguageContext } from "../../contexts/LanguageContext.js";
 import { FaLinkedinIn } from "react-icons/fa";
@@ -11,27 +11,23 @@ function About() {
   const { language, translations } = useContext(LanguageContext);
 
   return (
-    <section id="aboutme container d-flex mb-3">
-      <Container className="d-flex aboutEnd align-items-center p-5 mb-5 ">
-        <Row className="d-flex">
-          <Col
-            xs={{ order: 2, span: 12 }}
-            lg={{ order: 1, span: 6 }}
-            className="colAbout "
-          >
-            <h1 className="ms-1 mt-5 title">
+    <section id="about">
+      <Container>
+        <Row className="align-items-center justify-content-center">
+          <Col xs={12} md={6} className="colAbout">
+            <h1 className="title">
               <span>{translations[language].titulo}</span>
             </h1>
             <div>
-              <p className="mb-8 leading-relaxed p-2">
+              <p className="mb-4 leading-relaxed">
                 {translations[language].descriptionAbout}
               </p>
-              <div className=" mt-5">
+              <div className="mt-4 d-flex justify-content-center justify-content-md-start">
                 <a
                   href="https://www.linkedin.com/in/victor-wdfs"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="p-4"
+                  className="me-4"
                 >
                   <FaLinkedinIn size={50} />
                 </a>
@@ -39,21 +35,26 @@ function About() {
                   href="https://github.com/oliverio89"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="p-2"
                 >
                   <DiGithubBadge size={50} />
                 </a>
               </div>
             </div>
           </Col>
-          <Col
-            xs={{ order: 1, span: 12 }}
-            lg={{ order: 2, span: 6 }}
-            className="boxtilt mi-elemento"
-          >
-            <Tilt>
-              <img src={MyNewPhoto} className="imgMyPhoto" alt="myPhoto" />
-            </Tilt>
+          <Col xs={12} md={6} className="text-center">
+            <div
+              className="about-image-wrapper"
+              data-aos="fade-left"
+              data-aos-duration="1500"
+            >
+              <Tilt>
+                <img
+                  src={VictorMoreno}
+                  className="imgMyPhoto"
+                  alt="Víctor Moreno"
+                />
+              </Tilt>
+            </div>
           </Col>
         </Row>
       </Container>
