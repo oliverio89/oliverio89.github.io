@@ -1,27 +1,28 @@
-import React from "react";
+import React, { useContext } from "react";
+import { LanguageContext } from "../../contexts/LanguageContext";
 import "./Experience.css";
 
 function Experience() {
+  const { language, translations } = useContext(LanguageContext);
+
   return (
     <div class="container">
       <div class="main-timeline">
+        <h2>{translations[language].experienceTitle}</h2>
         <div class="timeline">
           <div class="icon"></div>
           <div class="date-content">
             <div class="date-outer">
               <span class="date">
-                <span class="month">Actualmente</span>
+                <span class="month">{translations[language].currently}</span>
                 <span class="year">2025</span>
               </span>
             </div>
           </div>
           <div class="timeline-content">
-            <h5 class="title">Informático: "In Genero"</h5>
+            <h5 class="title">{translations[language].inGeneroTitle}</h5>
             <p class="description">
-              Desarrollo y mantenimiento de aplicaciones web, implementación de
-              soluciones tecnológicas y gestión de proyectos digitales.
-              Colaboración en la transformación digital de la organización y
-              mejora de procesos internos.
+              {translations[language].inGeneroDescription}
             </p>
           </div>
         </div>
@@ -31,39 +32,15 @@ function Experience() {
           <div class="date-content">
             <div class="date-outer">
               <span class="date">
-                <span class="month">18 meses</span>
-                <span class="year">2024</span>
-              </span>
-            </div>
-          </div>
-          <div class="timeline-content">
-            <h5 class="title">Full Stack Developer: "Freelance"</h5>
-            <p class="description">
-              Desarrollo de proyectos web como profesional independiente,
-              implementando soluciones completas desde el frontend hasta el
-              backend. Especialización en React, Node.js y tecnologías modernas
-              de desarrollo web.
-            </p>
-          </div>
-        </div>
-
-        <div class="timeline">
-          <div class="icon"></div>
-          <div class="date-content">
-            <div class="date-outer">
-              <span class="date">
-                <span class="month">6 meses</span>
+                <span class="month">{translations[language].months18}</span>
                 <span class="year">2023</span>
               </span>
             </div>
           </div>
           <div class="timeline-content">
-            <h5 class="title">Programador Web: "People Experts"</h5>
+            <h5 class="title">{translations[language].factoriaF5Title}</h5>
             <p class="description">
-              Fue la primera empresa que confió en mí y me vio crecer en este
-              mundo, donde pude desarrollar mis primeros proyectos y aprender de
-              grandes profesionales. Desarrollé proyectos en Laravel y Vue, con
-              la finalidad de llevar a la empresa a lo más alto.
+              {translations[language].factoriaF5Description}
             </p>
           </div>
         </div>
@@ -73,18 +50,33 @@ function Experience() {
           <div class="date-content">
             <div class="date-outer">
               <span class="date">
-                <span class="month">3 meses</span>
+                <span class="month">{translations[language].months6}</span>
+                <span class="year">2023</span>
+              </span>
+            </div>
+          </div>
+          <div class="timeline-content">
+            <h5 class="title">{translations[language].peopleExpertsTitle}</h5>
+            <p class="description">
+              {translations[language].peopleExpertsDescription}
+            </p>
+          </div>
+        </div>
+
+        <div class="timeline">
+          <div class="icon"></div>
+          <div class="date-content">
+            <div class="date-outer">
+              <span class="date">
+                <span class="month">{translations[language].months3}</span>
                 <span class="year">2022</span>
               </span>
             </div>
           </div>
           <div class="timeline-content">
-            <h5 class="title">Bootcamp: "Iron Hack"</h5>
+            <h5 class="title">{translations[language].ironhackTitle}</h5>
             <p class="description">
-              Empecé mi camino en la programación de la mano de la prestigiosa
-              escuela Ironhack Madrid, donde descrubrí este gran mundo y donde
-              pude especializarme en el desarrollo web. React y Node.js fueron
-              mis principales herramientas.
+              {translations[language].ironhackDescription}
             </p>
           </div>
         </div>

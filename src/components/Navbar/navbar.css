@@ -3,19 +3,29 @@
   width: auto;
   font-size: larger;
   background-color: rgba(0, 0, 0, 0.5);
-  background-color: aliceblue;
-  position: relative;
+  position: fixed;
   z-index: 1000;
   align-items: baseline;
+  backdrop-filter: blur(10px);
 }
 
 .imgLogo {
   width: 10rem;
   padding-left: 35px;
+  transition: transform 0.3s ease;
+}
+
+.imgLogo:hover {
+  transform: scale(1.05);
 }
 
 .iconLenguage {
   width: 30px;
+  transition: transform 0.3s ease;
+}
+
+.iconLenguage:hover {
+  transform: scale(1.1);
 }
 
 .my-navbar-toggler {
@@ -26,16 +36,34 @@
   align-items: center;
 }
 
+.nav-link {
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+  color: rgba(255, 255, 255, 0.8) !important;
+}
+
 .botonIdioma {
   margin-right: 50px;
   background-color: rgba(0, 0, 0, 0.5);
   border: 1px solid white;
   border-radius: 500px;
+  transition: all 0.3s ease;
+  padding: 5px;
+}
+
+.botonIdioma:hover {
+  transform: scale(1.1);
+  background-color: rgba(255, 255, 255, 0.1);
 }
 
 @media (max-width: 991px) {
   .navbar-nav {
-    background-color: rgba(37, 52, 57, 0.7);
-    padding-bottom: 50px;
+    background-color: rgba(37, 52, 57, 0.9);
+    padding: 20px 0;
+    border-radius: 10px;
+    backdrop-filter: blur(10px);
   }
 }

@@ -16,6 +16,26 @@ const translations = {
     Contacto: "Contacto",
     Stack: "Tecnologías aplicadas",
     Aplicaciones: "Aplicaciones que he desarrollado",
+    inGeneroTitle: 'Informático: "In Genero"',
+    inGeneroDescription:
+      "Desarrollo y mantenimiento de aplicaciones web, implementación de soluciones tecnológicas y gestión de proyectos digitales. Colaboración en la transformación digital de la organización y mejora de procesos internos.",
+    freelanceTitle: 'Full Stack Developer: "Freelance"',
+    freelanceDescription:
+      "Desarrollo de proyectos web como profesional independiente, implementando soluciones completas desde el frontend hasta el backend. Especialización en React, Node.js y tecnologías modernas de desarrollo web.",
+    peopleExpertsTitle: 'Programador Web: "People Experts"',
+    peopleExpertsDescription:
+      "Fue la primera empresa que confió en mí y me vio crecer en este mundo, donde pude desarrollar mis primeros proyectos y aprender de grandes profesionales. Desarrollé proyectos en Laravel y Vue, con la finalidad de llevar a la empresa a lo más alto.",
+    ironhackTitle: 'Bootcamp: "Iron Hack"',
+    ironhackDescription:
+      "Empecé mi camino en la programación de la mano de la prestigiosa escuela Ironhack Madrid, donde descrubrí este gran mundo y donde pude especializarme en el desarrollo web. React y Node.js fueron mis principales herramientas.",
+    factoriaF5Title: 'Formador: "Factoria F5"',
+    factoriaF5Description:
+      "Como formador en Factoria F5, me dedico a enseñar desarrollo web a futuros programadores, compartiendo mi experiencia y conocimientos en tecnologías como React, Node.js y desarrollo web en general.",
+    experienceTitle: "Experiencia Laboral",
+    currently: "Actualmente",
+    months18: "18 meses",
+    months6: "6 meses",
+    months3: "3 meses",
   },
   en: {
     titulo: "Víctor: Web Developer",
@@ -34,6 +54,26 @@ const translations = {
     Contacto: "Contact",
     Stack: "Stack",
     Aplicaciones: "Programs that I have designed and developed",
+    inGeneroTitle: 'IT Specialist: "In Genero"',
+    inGeneroDescription:
+      "Development and maintenance of web applications, implementation of technological solutions and digital project management. Collaboration in the organization's digital transformation and improvement of internal processes.",
+    freelanceTitle: 'Full Stack Developer: "Freelance"',
+    freelanceDescription:
+      "Development of web projects as an independent professional, implementing complete solutions from frontend to backend. Specialization in React, Node.js and modern web development technologies.",
+    peopleExpertsTitle: 'Web Developer: "People Experts"',
+    peopleExpertsDescription:
+      "It was the first company that trusted me and saw me grow in this field, where I was able to develop my first projects and learn from great professionals. I developed projects in Laravel and Vue, with the aim of taking the company to the highest level.",
+    ironhackTitle: 'Bootcamp: "Iron Hack"',
+    ironhackDescription:
+      "I started my programming journey with the prestigious Ironhack Madrid school, where I discovered this great world and where I was able to specialize in web development. React and Node.js were my main tools.",
+    factoriaF5Title: 'Trainer: "Factoria F5"',
+    factoriaF5Description:
+      "As a trainer at Factoria F5, I teach web development to future programmers, sharing my experience and knowledge in technologies such as React, Node.js and web development in general.",
+    experienceTitle: "Work Experience",
+    currently: "Currently",
+    months18: "18 months",
+    months6: "6 months",
+    months3: "3 months",
   },
 };
 

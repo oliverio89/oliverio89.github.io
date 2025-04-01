@@ -9,12 +9,18 @@ import { LanguageContext } from "../../contexts/LanguageContext.js";
 function Navbarr() {
   const { language, translations, changeLanguage } =
     useContext(LanguageContext);
-
   const [lang, setIdioma] = useState("en");
 
   const handleLanguageChange = () => {
     setIdioma(lang === "es" ? "en" : "es");
     changeLanguage(lang);
+  };
+
+  const scrollToSection = (sectionId) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
   };
 
   return (
@@ -23,31 +29,53 @@ function Navbarr() {
       bg="transparent"
       expand="lg"
       fixed="top"
-      className=" navbar-white m-3 "
+      className="navbar-white m-3"
     >
-      <Navbar.Brand href="#">
-        <img src={logo} className="imgLogo " alt="imgLogo" />
+      <Navbar.Brand href="#" onClick={() => scrollToSection("top")}>
+        <img src={logo} className="imgLogo" alt="Logo Víctor Moreno" />
       </Navbar.Brand>
       <Navbar.Toggle
-        aria-controls="responsive-navbar-nav "
-        className="my-navbar-toggler "
+        aria-controls="responsive-navbar-nav"
+        className="my-navbar-toggler"
       />
-      <Navbar.Collapse id="responsive-navbar-nav ">
+      <Navbar.Collapse id="responsive-navbar-nav">
         <Nav className="m-auto">
-          <Nav.Link href="#projects" className="text-white p-5">
+          <Nav.Link
+            href="#projects"
+            className="text-white p-5 nav-link"
+            onClick={(e) => {
+              e.preventDefault();
+              scrollToSection("projects");
+            }}
+          >
             {translations[language].Proyectos}
           </Nav.Link>
-          <Nav.Link href="#aboutme" className="text-white p-5">
+          <Nav.Link
+            href="#aboutme"
+            className="text-white p-5 nav-link"
+            onClick={(e) => {
+              e.preventDefault();
+              scrollToSection("aboutme");
+            }}
+          >
             {translations[language].AcercaDeMí}
           </Nav.Link>
-          <Nav.Link href="#stack" className="text-white p-5">
+          <Nav.Link
+            href="#stack"
+            className="text-white p-5 nav-link"
+            onClick={(e) => {
+              e.preventDefault();
+              scrollToSection("stack");
+            }}
+          >
             {translations[language].Stack}
           </Nav.Link>
         </Nav>
         <Nav className="m-auto">
           <button
-            onClick={() => handleLanguageChange()}
-            className="botonIdioma "
+            onClick={handleLanguageChange}
+            className="botonIdioma"
+            aria-label={`Cambiar a ${lang === "es" ? "inglés" : "español"}`}
           >
             <img
               className="iconLenguage"
