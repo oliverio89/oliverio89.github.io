@@ -72,12 +72,43 @@
   background: rgba(255, 255, 255, 0.1);
   color: white;
   transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
 }
 
 .social-link:hover {
   transform: translateY(-5px);
   background: rgba(255, 255, 255, 0.2);
-  color: #007bff;
+}
+
+.social-link.linkedin:hover {
+  color: #0077b5;
+}
+
+.social-link.github:hover {
+  color: #333;
+}
+
+.social-link.cv:hover {
+  color: #00ff9d;
+}
+
+.social-link.cv::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(
+    circle at center,
+    rgba(0, 255, 157, 0.2) 0%,
+    transparent 70%
+  );
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.social-link.cv:hover::before {
+  opacity: 1;
 }
 
 .image-container {

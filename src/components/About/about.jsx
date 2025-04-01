@@ -3,7 +3,7 @@ import "./about.css";
 import VictorMoreno from "../../resources/images/VíctorMoreno-removebg-preview.png";
 import Tilt from "react-parallax-tilt";
 import { LanguageContext } from "../../contexts/LanguageContext.js";
-import { FaLinkedinIn, FaGithub } from "react-icons/fa";
+import { FaLinkedinIn, FaGithub, FaFileDownload } from "react-icons/fa";
 import { Container, Row, Col } from "react-bootstrap";
 import OptimizedImage from "../OptimizedImage/OptimizedImage";
 
@@ -42,6 +42,14 @@ function About() {
                   aria-label="Visitar mi perfil de GitHub"
                 >
                   <FaGithub size={30} />
+                </a>
+                <a
+                  href="/cv-victor-moreno.pdf"
+                  download
+                  className="social-link cv"
+                  aria-label="Descargar mi CV"
+                >
+                  <FaFileDownload size={30} />
                 </a>
               </div>
             </div>
