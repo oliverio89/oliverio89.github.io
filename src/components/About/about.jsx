@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, memo } from "react";
 import "./about.css";
 import MyNewPhoto from "../../resources/images/NewImage.png";
 import Tilt from "react-parallax-tilt";
@@ -7,11 +7,11 @@ import { FaLinkedinIn } from "react-icons/fa";
 import { Container, Row, Col } from "react-bootstrap";
 import { DiGithubBadge } from "react-icons/di";
 
-function About() {
+const About = memo(() => {
   const { language, translations } = useContext(LanguageContext);
 
   return (
-    <section id="aboutme container d-flex mb-3">
+    <section id="aboutme" className="container d-flex mb-3">
       <Container className="d-flex aboutEnd align-items-center p-5 mb-5 ">
         <Row className="d-flex">
           <Col
@@ -52,13 +52,20 @@ function About() {
             className="boxtilt mi-elemento"
           >
             <Tilt>
-              <img src={MyNewPhoto} className="imgMyPhoto" alt="myPhoto" />
+              <img
+                src={MyNewPhoto}
+                className="imgMyPhoto"
+                alt="myPhoto"
+                loading="lazy"
+              />
             </Tilt>
           </Col>
         </Row>
       </Container>
     </section>
   );
-}
+});
+
+About.displayName = "About";
 
 export default About;

@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, memo } from "react";
 import {
   DiReact,
   DiJavascript1,
@@ -21,71 +21,58 @@ import "./stack.css";
 import { LanguageContext } from "../../contexts/LanguageContext.js";
 import "animate.css";
 
-const Stack = () => {
+const stackItems = [
+  { Icon: DiHtml5, name: "HTML", ariaLabel: "HTML technology" },
+  {
+    Icon: DiJavascript1,
+    name: "JavaScript",
+    ariaLabel: "JavaScript technology",
+  },
+  { Icon: DiBootstrap, name: "Bootstrap", ariaLabel: "Bootstrap framework" },
+  { Icon: DiNodejsSmall, name: "Node.js", ariaLabel: "Node.js runtime" },
+  { Icon: FaVuejs, name: "Vue", ariaLabel: "Vue.js framework" },
+  {
+    Icon: SiBitbucket,
+    name: "Bitbucket",
+    ariaLabel: "Bitbucket version control",
+  },
+  { Icon: DiCss3, name: "CSS", ariaLabel: "CSS technology" },
+  { Icon: DiReact, name: "React", ariaLabel: "React library" },
+  {
+    Icon: SiTailwindcss,
+    name: "Tailwind CSS",
+    ariaLabel: "Tailwind CSS framework",
+  },
+  { Icon: SiPhp, name: "PHP", ariaLabel: "PHP programming language" },
+  { Icon: SiLaravel, name: "Laravel", ariaLabel: "Laravel framework" },
+  { Icon: SiJirasoftware, name: "Jira", ariaLabel: "Jira project management" },
+];
+
+const Stack = memo(() => {
   const { language, translations } = useContext(LanguageContext);
 
   return (
     <section id="stack" className="m-5">
       <h1 className="mb-5">{translations[language].Stack}</h1>
-
-      <Row className="p-3" my={5}>
-        <div className="mb-5 d-flex ">
-          <Col xs={2} className="iconosStacks animate__flipInY">
-            <DiHtml5 size={50} />
-            <p>HTML Js</p>
+      <Row className="p-3 g-4">
+        {stackItems.map((item, index) => (
+          <Col
+            key={item.name}
+            xs={6}
+            sm={4}
+            md={3}
+            lg={2}
+            className="iconosStacks animate__flipInY"
+          >
+            <item.Icon size={50} aria-label={item.ariaLabel} role="img" />
+            <p>{item.name}</p>
           </Col>
-          <Col xs={2} className="iconosStacks animate__flipInY">
-            <DiJavascript1 size={50} />
-            <p>JavaScript</p>
-          </Col>
-          <Col xs={2} className="iconosStacks animate__flipInY">
-            <DiBootstrap size={50} />
-            <p>Bootstrap</p>
-          </Col>
-          <Col xs={2} className="iconosStacks animate__flipInY">
-            <DiNodejsSmall size={50} />
-            <p>Node Js</p>
-          </Col>
-          <Col xs={2} className="iconosStacks animate__flipInY">
-            <FaVuejs size={50} />
-            <p>VUE</p>
-          </Col>
-          <Col xs={2} className="iconosStacks animate__flipInY">
-            <SiBitbucket size={50} />
-            <p>Bitbucket</p>
-          </Col>
-        </div>
-
-        <div className="mb-5 d-flex ">
-          <Col xs={2} className="iconosStacks animate__flipInY">
-            <DiCss3 size={50} />
-            <p>CSS Js</p>
-          </Col>
-
-          <Col xs={2} className="iconosStacks animate__flipInY">
-            <DiReact size={50} />
-            <p>React Js</p>
-          </Col>
-          <Col xs={2} className="iconosStacks animate__flipInY">
-            <SiTailwindcss size={50} />
-            <p>Tailwind css</p>
-          </Col>
-          <Col xs={2} className="iconosStacks animate__flipInY">
-            <SiPhp size={50} />
-            <p>PHP</p>
-          </Col>
-          <Col xs={2} className="iconosStacks animate__flipInY">
-            <SiLaravel size={50} />
-            <p>Laravel</p>
-          </Col>
-          <Col xs={2} className="iconosStacks animate__flipInY">
-            <SiJirasoftware size={50} />
-            <p>Jira</p>
-          </Col>
-        </div>
+        ))}
       </Row>
     </section>
   );
-};
+});
+
+Stack.displayName = "Stack";
 
 export default Stack;
