@@ -1,7 +1,7 @@
 import React from "react";
-import "./NewComponent.css";
+import "./Timeline.css";
 
-function NewComponent() {
+function Timeline() {
   return (
     <div class="container">
       <div class="main-timeline">
@@ -98,4 +98,4 @@ function NewComponent() {
   );
 }
 
-export default NewComponent;
+export default Timeline;
