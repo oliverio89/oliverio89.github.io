@@ -20,9 +20,9 @@ function renderWithContext(Component) {
 }
 
 beforeEach(() => {
-  window.alert = jest.fn();
-  global.fetch = jest.fn(() => Promise.resolve({ ok: true }));
-  jest.clearAllMocks();
+  window.alert = vi.fn();
+  global.fetch = vi.fn(() => Promise.resolve({ ok: true }));
+  vi.clearAllMocks();
 });
 
 describe('Component stability: renders without crashing', () => {

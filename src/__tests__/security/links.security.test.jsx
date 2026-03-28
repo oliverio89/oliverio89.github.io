@@ -13,8 +13,8 @@ function renderWithContext(Component) {
 }
 
 beforeEach(() => {
-  window.alert = jest.fn();
-  global.fetch = jest.fn(() => Promise.resolve({ ok: true }));
+  window.alert = vi.fn();
+  global.fetch = vi.fn(() => Promise.resolve({ ok: true }));
 });
 
 describe('Link security: target=_blank must have rel=noopener noreferrer', () => {

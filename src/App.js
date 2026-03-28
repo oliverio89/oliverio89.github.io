@@ -1,14 +1,2 @@
-import "./App.css";
-import "bootstrap/dist/css/bootstrap.min.css";
-
-import AppRoutes from "./routes/AppRoutes.jsx";
-
-function App() {
-  return (
-    <div className="App">
-      <AppRoutes />
-    </div>
-  );
-}
-
-export default App;
+// JSX moved to App.jsx for Vite compatibility
+export { default } from './App.jsx';

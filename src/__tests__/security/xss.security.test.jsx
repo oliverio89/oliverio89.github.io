@@ -2,9 +2,9 @@ import { render, screen, fireEvent } from '@testing-library/react';
 import Contact from '../../components/Contact/contact';
 
 beforeEach(() => {
-  window.alert = jest.fn();
-  global.fetch = jest.fn(() => Promise.resolve({ ok: true }));
-  jest.clearAllMocks();
+  window.alert = vi.fn();
+  global.fetch = vi.fn(() => Promise.resolve({ ok: true }));
+  vi.clearAllMocks();
 });
 
 describe('XSS prevention: Contact form', () => {
