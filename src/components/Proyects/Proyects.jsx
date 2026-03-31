@@ -54,33 +54,39 @@ export default function Projects() {
               onMouseLeave={() => setHovered(null)}
             >
               {/* Image */}
-              <div className="project-card__img-wrap">
-                <img
-                  src={project.image}
-                  alt={project.title}
-                  className="project-card__img"
-                  loading="lazy"
-                />
-                <div className="project-card__img-overlay" />
-                {i === 0 && (
-                  <span className="project-card__featured-badge">Featured</span>
-                )}
-              </div>
+              {!project.hideImage && (
+                <div className="project-card__img-wrap">
+                  <img
+                    src={project.image}
+                    alt={project.title}
+                    className="project-card__img"
+                    loading="lazy"
+                  />
+                  <div className="project-card__img-overlay" />
+                  {i === 0 && (
+                    <span className="project-card__featured-badge">Featured</span>
+                  )}
+                </div>
+              )}
 
               {/* Content */}
               <div className="project-card__content">
                 <span className="project-card__subtitle">{project.subtitle}</span>
 
                 <h3 className="project-card__title">
-                  <a
-                    href={project.link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="project-card__title-link"
-                  >
-                    {project.title}
-                    <FiExternalLink size={14} />
-                  </a>
+                  {project.hideProjectLink ? (
+                    <span className="project-card__title-link">{project.title}</span>
+                  ) : (
+                    <a
+                      href={project.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="project-card__title-link"
+                    >
+                      {project.title}
+                      <FiExternalLink size={14} />
+                    </a>
+                  )}
                 </h3>
 
                 <p className="project-card__desc">{project.description}</p>
@@ -102,26 +108,30 @@ export default function Projects() {
                   </div>
                 )}
 
-                <div className="project-card__actions">
-                  <a
-                    href={project.link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="project-card__btn"
-                  >
-                    <FiExternalLink size={14} />
-                    Ver proyecto
-                  </a>
-                  <a
-                    href="https://github.com/oliverio89"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="project-card__btn project-card__btn--ghost"
-                  >
-                    <FiGithub size={14} />
-                    GitHub
-                  </a>
-                </div>
+                {!project.hideAllLinks && (
+                  <div className="project-card__actions">
+                    {!project.hideProjectLink && (
+                      <a
+                        href={project.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="project-card__btn"
+                      >
+                        <FiExternalLink size={14} />
+                        Ver proyecto
+                      </a>
+                    )}
+                    <a
+                      href="https://github.com/oliverio89"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="project-card__btn project-card__btn--ghost"
+                    >
+                      <FiGithub size={14} />
+                      GitHub
+                    </a>
+                  </div>
+                )}
               </div>
             </motion.article>
           ))}

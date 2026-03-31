@@ -24,7 +24,7 @@ describe('Projects data integrity and security', () => {
   });
 
   test('all projects have required fields (title, subtitle, description, image, link)', () => {
-    projects.forEach((project, index) => {
+    projects.forEach((project) => {
       expect(project).toHaveProperty('title');
       expect(project).toHaveProperty('subtitle');
       expect(project).toHaveProperty('description');
@@ -37,7 +37,10 @@ describe('Projects data integrity and security', () => {
       expect(typeof project.description).toBe('string');
       expect(project.description.length).toBeGreaterThan(0);
       expect(typeof project.image).toBe('string');
-      expect(project.image.length).toBeGreaterThan(0);
+      // image can be empty string when hideImage is set
+      if (!project.hideImage) {
+        expect(project.image.length).toBeGreaterThan(0);
+      }
       expect(typeof project.link).toBe('string');
       expect(project.link.length).toBeGreaterThan(0);
     });
@@ -50,7 +53,7 @@ describe('Projects data integrity and security', () => {
   });
 
   test('all project image URLs use HTTPS protocol', () => {
-    projects.forEach((project) => {
+    projects.filter((p) => !p.hideImage && p.image).forEach((project) => {
       expect(project.image).toMatch(/^https:\/\//);
     });
   });

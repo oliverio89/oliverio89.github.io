@@ -101,13 +101,15 @@ describe('Component stability: content checks', () => {
 
   test('Projects renders all projects from data', () => {
     const { container } = renderWithContext(Projects);
-    // Each project renders an anchor linking to project.link
-    projects.forEach((project) => {
-      const titleEl = container.querySelector(
-        `[href="${project.link}"], a[href="${project.link}"]`
-      );
-      expect(titleEl).toBeTruthy();
-    });
+    // Only projects with visible links (no hideProjectLink and no hideAllLinks) render an anchor
+    projects
+      .filter((p) => !p.hideProjectLink && !p.hideAllLinks)
+      .forEach((project) => {
+        const titleEl = container.querySelector(
+          `[href="${project.link}"], a[href="${project.link}"]`
+        );
+        expect(titleEl).toBeTruthy();
+      });
   });
 
   test('Stack renders technology icons', () => {

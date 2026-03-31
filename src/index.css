@@ -28,7 +28,7 @@
   --shadow-card: 0 4px 32px rgba(0, 0, 0, 0.5);
   --shadow-glow: 0 0 60px rgba(99, 102, 241, 0.12);
   --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  --font-display: 'Syne', sans-serif;
+  --font-display: 'Plus Jakarta Sans', 'Inter', sans-serif;
   --font-body: 'Inter', sans-serif;
 }
 
@@ -77,12 +77,12 @@ body {
 
 .section-title {
   font-family: var(--font-display);
-  font-size: clamp(2rem, 4.5vw, 3rem);
-  font-weight: 900;
+  font-size: clamp(2rem, 4.5vw, 2.8rem);
+  font-weight: 800;
   color: var(--text-primary);
-  line-height: 1.05;
+  line-height: 1.15;
   margin-bottom: 18px;
-  letter-spacing: -0.02em;
+  letter-spacing: -0.01em;
 }
 
 .section-desc {
