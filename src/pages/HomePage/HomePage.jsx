@@ -1,44 +1,31 @@
-import React from "react";
-import "./HomePage.css";
-import { LanguageProvider } from "../../contexts/LanguageContext.js";
-import About from "../../components/About/about";
-import Projects from "../../components/Proyects/Proyects";
-import Footer from "../../components/Footer/footer.jsx";
-import Navbar from "../../components/Navbar/navbar";
-import KnowledgeStack from "../../components/Stack/stack";
-import NewComponent from "../../components/NewComponent/NewComponent.jsx";
+import { LanguageProvider } from '../../contexts/LanguageContext.js';
+import Navbar from '../../components/Navbar/navbar';
+import Hero from '../../components/Hero/Hero';
+import About from '../../components/About/about';
+import Experience from '../../components/NewComponent/NewComponent';
+import Stack from '../../components/Stack/stack';
+import Projects from '../../components/Proyects/Proyects';
+import DesignLab from '../../components/DesignLab/DesignLab';
+import Contact from '../../components/Contact/contact';
+import Footer from '../../components/Footer/footer';
+import './HomePage.css';
 
-const HomePage = () => {
+export default function HomePage() {
   return (
-    <section className="homepage">
-      <LanguageProvider>
-        <div className="m-3">
-          {" "}
-          <Navbar />{" "}
-        </div>
-        <div className="m-6">
-          {" "}
-          <About />{" "}
-        </div>
-        <div className="m-6">
-          {" "}
-          <NewComponent />{" "}
-        </div>
-        <div className="m-6">
-          {" "}
-          <KnowledgeStack />{" "}
-        </div>
-        <div className="m-6">
-          {" "}
-          <Projects />{" "}
-        </div>{" "}
-        <div>
-          {" "}
-          <Footer />{" "}
-        </div>{" "}
-      </LanguageProvider>
-    </section>
+    <LanguageProvider>
+      <div className="homepage">
+        <Navbar />
+        <main>
+          <Hero />
+          <About />
+          <Experience />
+          <Stack />
+          <Projects />
+          <DesignLab />
+          <Contact />
+        </main>
+        <Footer />
+      </div>
+    </LanguageProvider>
   );
-};
-
-export default HomePage;
+}

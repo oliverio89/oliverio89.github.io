@@ -1,1 +1,9 @@
+.homepage {
+  min-height: 100vh;
+  background: var(--bg-primary);
+}
 
+main {
+  display: flex;
+  flex-direction: column;
+}

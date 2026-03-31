@@ -1,39 +1,69 @@
-import React from "react";
-import { FaLinkedin, FaGithub } from "react-icons/fa";
-import "./footer.css";
+import { FaLinkedin, FaGithub } from 'react-icons/fa';
+import { FiMail, FiHeart } from 'react-icons/fi';
+import './footer.css';
 
-function Footer() {
+export default function Footer() {
+  const year = new Date().getFullYear();
+
   return (
-    <footer class="text-center">
-      <div class="container p-4 pb-0">
-        <section class="mb-4">
+    <footer className="footer">
+      <div className="container footer__inner">
+        {/* Brand */}
+        <div className="footer__brand">
+          <span className="footer__logo">VM<span className="footer__dot">.</span></span>
+          <p className="footer__tagline">
+            Full-Stack Developer · Platform Architect · Automatización IA
+          </p>
+        </div>
+
+        {/* Links */}
+        <div className="footer__nav">
+          <a href="#hero" className="footer__link">Inicio</a>
+          <a href="#experiencia" className="footer__link">Experiencia</a>
+          <a href="#aboutme" className="footer__link">About</a>
+          <a href="#stack" className="footer__link">Stack</a>
+          <a href="#projects" className="footer__link">Proyectos</a>
+          <a href="#contact" className="footer__link">Contacto</a>
+        </div>
+
+        {/* Socials */}
+        <div className="footer__socials">
           <a
-            href="https://www.linkedin.com/in/victor-wdfs"
+            href="https://www.linkedin.com/in/victor-wdfs/"
             target="_blank"
             rel="noopener noreferrer"
-            className="p-2"
+            className="footer__social"
+            aria-label="LinkedIn"
           >
-            <FaLinkedin size={50} className="contact-icon p-2" />
+            <FaLinkedin size={18} />
           </a>
           <a
             href="https://github.com/oliverio89"
             target="_blank"
             rel="noopener noreferrer"
-            className="p-2"
+            className="footer__social"
+            aria-label="GitHub"
           >
-            <FaGithub size={50} className="contact-icon p-2" />
+            <FaGithub size={18} />
           </a>
-        </section>
+          <a
+            href="mailto:oliverio89@gmail.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="footer__social"
+            aria-label="Email"
+          >
+            <FiMail size={18} />
+          </a>
+        </div>
       </div>
 
-      <div class="text-center p-3">
-        © 2023 Copyright <span>:</span> <span></span>
-        <a href="https://www.linkedin.com/in/victor-wdfs/">
-          Víctor Moreno García
-        </a>
+      <div className="footer__bottom">
+        <p>
+          © {year} Víctor Moreno García · Hecho con{' '}
+          <FiHeart size={12} className="footer__heart" />
+        </p>
       </div>
     </footer>
   );
 }
-
-export default Footer;

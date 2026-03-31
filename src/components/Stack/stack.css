@@ -1,18 +1,96 @@
-.iconosStacks {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+.skills {
+  background: var(--bg-secondary);
 }
 
-.animate__flipInY:hover {
-  display: inline-block;
-  animation: bounce; /* referring directly to the animation's @keyframe declaration */
-  animation-duration: 1s; /* don't forget to set a duration! */
+.skills__header {
+  margin-bottom: 56px;
+}
 
+.skills__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  gap: 16px;
+}
+
+.skill-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 22px 18px 18px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
-  cursor: pointer;
+  gap: 10px;
+  cursor: default;
+  transition: var(--transition);
+  position: relative;
+  overflow: hidden;
+}
+
+.skill-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: var(--tech-color, var(--accent));
+  opacity: 0;
+  transition: var(--transition);
+}
+
+.skill-card:hover {
+  border-color: var(--border-hover);
+  background: var(--bg-card-hover);
+}
+
+.skill-card:hover::before {
+  opacity: 1;
+}
+
+.skill-card__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  background: rgba(255,255,255,0.04);
+  border-radius: var(--radius-md);
+  transition: var(--transition);
+}
+
+.skill-card:hover .skill-card__icon {
+  background: rgba(255,255,255,0.07);
+}
+
+.skill-card__name {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-secondary);
+  text-align: center;
+  line-height: 1.3;
+}
+
+.skill-card__bar {
+  width: 100%;
+  height: 3px;
+  background: rgba(255,255,255,0.06);
+  border-radius: 2px;
+  overflow: hidden;
+  margin-top: 4px;
+}
+
+.skill-card__fill {
+  height: 100%;
+  background: var(--tech-color, var(--accent));
+  border-radius: 2px;
+  opacity: 0.7;
+}
+
+@media (max-width: 600px) {
+  .skills__grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+  }
+  .skill-card { padding: 16px 10px 12px; }
 }
