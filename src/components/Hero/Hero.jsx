@@ -1,22 +1,15 @@
-import { useEffect, useState, useContext } from 'react';
-import { motion } from 'framer-motion';
-import { FiArrowDown, FiMail } from 'react-icons/fi';
-import { FaGithub, FaLinkedinIn } from 'react-icons/fa';
-import { LanguageContext } from '../../contexts/LanguageContext.js';
-import './Hero.css';
-
-const ROLES = [
-  'Lead Full-Stack Developer',
-  'Platform Architect',
-  'Automation & AI',
-  'SaaS Builder',
-];
+import { useEffect, useState, useContext } from "react";
+import { motion } from "framer-motion";
+import { FiArrowDown, FiMail } from "react-icons/fi";
+import { FaGithub, FaLinkedinIn } from "react-icons/fa";
+import { LanguageContext } from "../../contexts/LanguageContext.js";
+import "./Hero.css";
 
 function useTypewriter(words, speed = 90) {
   const [index, setIndex] = useState(0);
   const [subIndex, setSubIndex] = useState(0);
   const [reverse, setReverse] = useState(false);
-  const [text, setText] = useState('');
+  const [text, setText] = useState("");
 
   useEffect(() => {
     if (subIndex === words[index].length + 1 && !reverse) {
@@ -28,10 +21,13 @@ function useTypewriter(words, speed = 90) {
       setIndex((prev) => (prev + 1) % words.length);
       return;
     }
-    const timeout = setTimeout(() => {
-      setSubIndex((prev) => prev + (reverse ? -1 : 1));
-      setText(words[index].substring(0, subIndex));
-    }, reverse ? speed / 2 : speed);
+    const timeout = setTimeout(
+      () => {
+        setSubIndex((prev) => prev + (reverse ? -1 : 1));
+        setText(words[index].substring(0, subIndex));
+      },
+      reverse ? speed / 2 : speed,
+    );
     return () => clearTimeout(timeout);
   }, [subIndex, index, reverse, words, speed]);
 
@@ -41,7 +37,7 @@ function useTypewriter(words, speed = 90) {
 export default function Hero() {
   const { language, translations } = useContext(LanguageContext);
   const t = translations[language];
-  const role = useTypewriter(ROLES);
+  const role = useTypewriter(t.heroRoles || []);
 
   return (
     <section className="hero" id="hero">
@@ -160,12 +156,14 @@ export default function Hero() {
           transition={{ delay: 0.5, duration: 0.7 }}
         >
           {[
-            { value: '3+', labelKey: 'anosExp' },
-            { value: '5', labelKey: 'empresas' },
-            { value: '10+', labelKey: 'stacksDominados' },
+            { value: "3+", labelKey: "anosExp" },
+            { value: "5", labelKey: "empresas" },
+            { value: "10+", labelKey: "stacksDominados" },
           ].map((stat) => (
             <div key={stat.labelKey} className="hero__stat">
-              <span className="hero__stat-value gradient-text">{stat.value}</span>
+              <span className="hero__stat-value gradient-text">
+                {stat.value}
+              </span>
               <span className="hero__stat-label">{t[stat.labelKey]}</span>
             </div>
           ))}

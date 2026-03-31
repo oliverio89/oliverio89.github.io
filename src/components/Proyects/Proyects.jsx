@@ -1,9 +1,8 @@
-import { useState, useContext } from 'react';
-import { motion } from 'framer-motion';
-import { FiExternalLink, FiGithub, FiUser, FiLayers } from 'react-icons/fi';
-import { LanguageContext } from '../../contexts/LanguageContext.js';
-import { projects } from './data';
-import './proyects.css';
+import { useState, useContext } from "react";
+import { motion } from "framer-motion";
+import { FiExternalLink, FiGithub, FiUser, FiLayers } from "react-icons/fi";
+import { LanguageContext } from "../../contexts/LanguageContext.js";
+import "./proyects.css";
 
 const container = {
   hidden: {},
@@ -30,9 +29,7 @@ export default function Projects() {
           transition={{ duration: 0.6 }}
         >
           <span className="section-eyebrow">{t.proyectosEyebrow}</span>
-          <h2 className="section-title">
-            {t.Aplicaciones}
-          </h2>
+          <h2 className="section-title">{t.Aplicaciones}</h2>
           <p className="section-desc">{t.proyectosDesc}</p>
         </motion.div>
 
@@ -43,10 +40,10 @@ export default function Projects() {
           whileInView="show"
           viewport={{ once: true }}
         >
-          {projects.map((project, i) => (
+          {t.projectsData.map((project, i) => (
             <motion.article
               key={project.title}
-              className={`project-card${i === 0 ? ' project-card--featured' : ''}${project.hideImage ? ' project-card--text-only' : ''}`}
+              className={`project-card${i === 0 ? " project-card--featured" : ""}${project.hideImage ? " project-card--text-only" : ""}`}
               variants={item}
               onMouseEnter={() => setHovered(project.title)}
               onMouseLeave={() => setHovered(null)}
@@ -62,18 +59,24 @@ export default function Projects() {
                   />
                   <div className="project-card__img-overlay" />
                   {i === 0 && (
-                    <span className="project-card__featured-badge">Featured</span>
+                    <span className="project-card__featured-badge">
+                      {t.featuredBadge}
+                    </span>
                   )}
                 </div>
               )}
 
               {/* Content */}
               <div className="project-card__content">
-                <span className="project-card__subtitle">{project.subtitle}</span>
+                <span className="project-card__subtitle">
+                  {project.subtitle}
+                </span>
 
                 <h3 className="project-card__title">
                   {project.hideProjectLink || project.hideAllLinks ? (
-                    <span className="project-card__title-link">{project.title}</span>
+                    <span className="project-card__title-link">
+                      {project.title}
+                    </span>
                   ) : (
                     <a
                       href={project.link}

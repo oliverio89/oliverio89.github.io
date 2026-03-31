@@ -1,30 +1,30 @@
-import { useContext } from 'react';
-import { motion } from 'framer-motion';
-import { FaLinkedinIn, FaGithub } from 'react-icons/fa';
-import { FiMapPin, FiBriefcase } from 'react-icons/fi';
-import { LanguageContext } from '../../contexts/LanguageContext.js';
-import './about.css';
+import { useContext } from "react";
+import { motion } from "framer-motion";
+import { FaLinkedinIn, FaGithub } from "react-icons/fa";
+import { FiMapPin, FiBriefcase } from "react-icons/fi";
+import { LanguageContext } from "../../contexts/LanguageContext.js";
+import "./about.css";
 
 const STACK_GROUPS = [
   {
-    labelKey: 'Frontend',
-    color: 'accent',
-    items: ['React', 'Vue', 'TypeScript', 'Vite', 'Material UI'],
+    labelKey: "Frontend",
+    color: "accent",
+    items: ["React", "Vue", "TypeScript", "Vite", "Material UI"],
   },
   {
-    labelKey: 'Backend',
-    color: 'cyan',
-    items: ['Node.js', 'Laravel / PHP', 'REST APIs', 'Firebase'],
+    labelKey: "Backend",
+    color: "cyan",
+    items: ["Node.js", "Laravel / PHP", "REST APIs", "Firebase"],
   },
   {
-    labelKey: 'Cloud & Infra',
-    color: 'green',
-    items: ['Google Cloud', 'Docker', 'Nginx', 'Linux / LXD', 'Firestore'],
+    labelKey: "Cloud & Infra",
+    color: "green",
+    items: ["Google Cloud", "Docker", "Nginx", "Linux / LXD", "Firestore"],
   },
   {
-    labelKey: 'aboutStackAutomatizacion',
-    color: 'purple',
-    items: ['n8n', 'Make', 'IA Workflows', 'MongoDB', 'MySQL'],
+    labelKey: "aboutStackAutomatizacion",
+    color: "purple",
+    items: ["n8n", "Make", "IA Workflows", "MongoDB", "MySQL"],
   },
 ];
 
@@ -76,34 +76,16 @@ export default function About() {
             <div className="about__meta">
               <span className="about__meta-item">
                 <FiMapPin size={14} />
-                Motril, España
+                {t.aboutLocation}
               </span>
               <span className="about__meta-item about__meta-item--active">
                 <FiBriefcase size={14} />
-                Lead Full-Stack @ Di-Mo
+                {t.aboutRole}
               </span>
             </div>
 
             <p className="about__text">{t.aboutBio1}</p>
-            <p className="about__text">
-              {language === 'es' ? (
-                <>
-                  Actualmente lidero el desarrollo de <strong>Di-Mo</strong>, una
-                  plataforma SaaS para el sector de la arquitectura que sincroniza
-                  datos en tiempo real entre una app móvil en Unity y la nube. Antes
-                  de eso, formé a más de 100 desarrolladores en Factoría F5 y trabajé
-                  en múltiples proyectos web con Vue, Laravel y React.
-                </>
-              ) : (
-                <>
-                  I currently lead the development of <strong>Di-Mo</strong>, a SaaS
-                  platform for the architecture sector that syncs data in real time
-                  between a Unity mobile app and the cloud. Before that, I trained
-                  100+ developers at Factoría F5 and worked on multiple web projects
-                  with Vue, Laravel and React.
-                </>
-              )}
-            </p>
+            <p className="about__text">{t.aboutBio2}</p>
             <p className="about__text">{t.aboutBio3}</p>
 
             <div className="about__links">
@@ -137,13 +119,21 @@ export default function About() {
             viewport={{ once: true }}
           >
             {STACK_GROUPS.map((group) => (
-              <motion.div key={group.labelKey} className="about__stack-group" variants={item}>
-                <span className={`about__stack-label about__stack-label--${group.color}`}>
+              <motion.div
+                key={group.labelKey}
+                className="about__stack-group"
+                variants={item}
+              >
+                <span
+                  className={`about__stack-label about__stack-label--${group.color}`}
+                >
                   {getGroupLabel(group.labelKey)}
                 </span>
                 <div className="about__stack-chips">
                   {group.items.map((tech) => (
-                    <span key={tech} className="tech-badge">{tech}</span>
+                    <span key={tech} className="tech-badge">
+                      {tech}
+                    </span>
                   ))}
                 </div>
               </motion.div>

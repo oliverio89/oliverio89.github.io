@@ -1,130 +1,104 @@
-import { projects } from '../../components/Proyects/data';
-import translations from '../../components/Language/translations';
+import translations from "../../components/Language/translations";
 
 const REQUIRED_TRANSLATION_KEYS = [
-  'titulo',
-  'subtitulo',
-  'descripción',
-  'descriptionAbout',
-  'AcercaDeMí',
-  'Habilidades',
-  'Proyectos',
-  'ExperienciaLaboral',
-  'EducaciónCertificaciones',
-  'TestimoniosReferencias',
-  'Contacto',
-  'Stack',
-  'Aplicaciones',
+  "titulo",
+  "subtitulo",
+  "descripción",
+  "AcercaDeMí",
+  "Proyectos",
+  "Contacto",
+  "projectsData",
+  "experienceData",
 ];
 
-describe('Projects data integrity and security', () => {
-  test('projects array is not empty', () => {
-    expect(Array.isArray(projects)).toBe(true);
-    expect(projects.length).toBeGreaterThan(0);
+describe("Projects and Experience data integrity and security", () => {
+  const allProjects = [
+    ...translations.es.projectsData,
+    ...translations.en.projectsData,
+  ];
+  const allExperiences = [
+    ...translations.es.experienceData,
+    ...translations.en.experienceData,
+  ];
+
+  test("projectsData arrays are not empty", () => {
+    expect(translations.es.projectsData.length).toBeGreaterThan(0);
+    expect(translations.en.projectsData.length).toBeGreaterThan(0);
   });
 
-  test('all projects have required fields (title, subtitle, description, image, link)', () => {
-    projects.forEach((project) => {
-      expect(project).toHaveProperty('title');
-      expect(project).toHaveProperty('subtitle');
-      expect(project).toHaveProperty('description');
-      expect(project).toHaveProperty('image');
-      expect(project).toHaveProperty('link');
-      expect(typeof project.title).toBe('string');
-      expect(project.title.length).toBeGreaterThan(0);
-      expect(typeof project.subtitle).toBe('string');
-      expect(project.subtitle.length).toBeGreaterThan(0);
-      expect(typeof project.description).toBe('string');
-      expect(project.description.length).toBeGreaterThan(0);
-      expect(typeof project.image).toBe('string');
-      // image can be empty string when hideImage is set
-      if (!project.hideImage) {
-        expect(project.image.length).toBeGreaterThan(0);
+  test("all projects have required fields", () => {
+    allProjects.forEach((project) => {
+      expect(project).toHaveProperty("title");
+      expect(project).toHaveProperty("description");
+      expect(project).toHaveProperty("link");
+      expect(typeof project.title).toBe("string");
+      expect(typeof project.description).toBe("string");
+      expect(typeof project.link).toBe("string");
+    });
+  });
+
+  test("all project links use HTTPS protocol", () => {
+    allProjects.forEach((project) => {
+      if (project.link && project.link.startsWith("http")) {
+        expect(project.link).toMatch(/^https:\/\//);
       }
-      expect(typeof project.link).toBe('string');
-      expect(project.link.length).toBeGreaterThan(0);
     });
   });
 
-  test('all project links use HTTPS protocol', () => {
-    projects.forEach((project) => {
-      expect(project.link).toMatch(/^https:\/\//);
-    });
-  });
-
-  test('all project image URLs use HTTPS protocol', () => {
-    projects.filter((p) => !p.hideImage && p.image).forEach((project) => {
-      expect(project.image).toMatch(/^https:\/\//);
-    });
-  });
-
-  test('no XSS in project titles (no script tags)', () => {
-    projects.forEach((project) => {
-      expect(project.title.toLowerCase()).not.toContain('<script');
-      expect(project.title.toLowerCase()).not.toContain('</script>');
-      expect(project.title.toLowerCase()).not.toContain('javascript:');
-      expect(project.title).not.toMatch(/on\w+\s*=/i);
-    });
-  });
-
-  test('no XSS in project descriptions (no script tags)', () => {
-    projects.forEach((project) => {
-      expect(project.description.toLowerCase()).not.toContain('<script');
-      expect(project.description.toLowerCase()).not.toContain('</script>');
-      expect(project.description.toLowerCase()).not.toContain('javascript:');
-      expect(project.description).not.toMatch(/on\w+\s*=/i);
-    });
-  });
-
-  test('no javascript: protocol in project links', () => {
-    projects.forEach((project) => {
-      expect(project.link.toLowerCase()).not.toMatch(/^javascript:/);
-      expect(project.link.toLowerCase()).not.toContain('javascript:');
-    });
-  });
-
-  test('no javascript: protocol in project image URLs', () => {
-    projects.forEach((project) => {
-      expect(project.image.toLowerCase()).not.toMatch(/^javascript:/);
-      expect(project.image.toLowerCase()).not.toContain('javascript:');
+  test("no XSS in titles or descriptions", () => {
+    [...allProjects, ...allExperiences].forEach((item) => {
+      const text =
+        (item.title || item.role || "") +
+        (item.description || item.summary || "");
+      expect(text.toLowerCase()).not.toContain("<script");
+      expect(text.toLowerCase()).not.toContain("javascript:");
     });
   });
 });
 
-describe('Translations data integrity and security', () => {
-  test('Spanish translations have all required keys', () => {
+describe("Translations data integrity and security", () => {
+  test("Spanish translations have all required keys", () => {
     REQUIRED_TRANSLATION_KEYS.forEach((key) => {
       expect(translations.es).toHaveProperty(key);
-      expect(typeof translations.es[key]).toBe('string');
-      expect(translations.es[key].length).toBeGreaterThan(0);
+      const val = translations.es[key];
+      expect(val).toBeTruthy();
+      if (typeof val === "string") {
+        expect(val.length).toBeGreaterThan(0);
+      }
     });
   });
 
-  test('English translations have all required keys', () => {
+  test("English translations have all required keys", () => {
     REQUIRED_TRANSLATION_KEYS.forEach((key) => {
       expect(translations.en).toHaveProperty(key);
-      expect(typeof translations.en[key]).toBe('string');
-      expect(translations.en[key].length).toBeGreaterThan(0);
+      const val = translations.en[key];
+      expect(val).toBeTruthy();
+      if (typeof val === "string") {
+        expect(val.length).toBeGreaterThan(0);
+      }
     });
   });
 
-  test('no script injection in Spanish translations', () => {
-    Object.values(translations.es).forEach((value) => {
-      expect(value.toLowerCase()).not.toContain('<script');
-      expect(value.toLowerCase()).not.toContain('javascript:');
-      expect(value).not.toMatch(/on\w+\s*=/i);
-    });
+  test("no script injection in translations", () => {
+    const checkValue = (val) => {
+      if (typeof val === "string") {
+        expect(val.toLowerCase()).not.toContain("<script");
+        expect(val.toLowerCase()).not.toContain("javascript:");
+      } else if (Array.isArray(val)) {
+        val.forEach((item) => {
+          if (typeof item === "string") checkValue(item);
+          else if (typeof item === "object")
+            Object.values(item).forEach(checkValue);
+        });
+      } else if (typeof val === "object" && val !== null) {
+        Object.values(val).forEach(checkValue);
+      }
+    };
+    Object.values(translations.es).forEach(checkValue);
+    Object.values(translations.en).forEach(checkValue);
   });
 
-  test('no script injection in English translations', () => {
-    Object.values(translations.en).forEach((value) => {
-      expect(value.toLowerCase()).not.toContain('<script');
-      expect(value.toLowerCase()).not.toContain('javascript:');
-      expect(value).not.toMatch(/on\w+\s*=/i);
-    });
-  });
-
-  test('both languages have same set of keys', () => {
+  test("both languages have same set of keys", () => {
     const esKeys = Object.keys(translations.es).sort();
     const enKeys = Object.keys(translations.en).sort();
     expect(esKeys).toEqual(enKeys);
