@@ -82,6 +82,13 @@
   padding: 4px 12px;
 }
 
+/* Text-only card (no image) */
+.project-card--text-only {
+  grid-column: 1 / -1;
+  border-left: 3px solid var(--accent);
+  background: linear-gradient(135deg, rgba(99,102,241,0.06) 0%, var(--bg-card) 60%);
+}
+
 /* Content */
 .project-card__content {
   padding: 24px;

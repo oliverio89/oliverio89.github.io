@@ -1,26 +1,28 @@
+import { useContext } from 'react';
 import { motion } from 'framer-motion';
 import { FaLinkedinIn, FaGithub } from 'react-icons/fa';
 import { FiMapPin, FiBriefcase } from 'react-icons/fi';
+import { LanguageContext } from '../../contexts/LanguageContext.js';
 import './about.css';
 
 const STACK_GROUPS = [
   {
-    label: 'Frontend',
+    labelKey: 'Frontend',
     color: 'accent',
     items: ['React', 'Vue', 'TypeScript', 'Vite', 'Material UI'],
   },
   {
-    label: 'Backend',
+    labelKey: 'Backend',
     color: 'cyan',
     items: ['Node.js', 'Laravel / PHP', 'REST APIs', 'Firebase'],
   },
   {
-    label: 'Cloud & Infra',
+    labelKey: 'Cloud & Infra',
     color: 'green',
     items: ['Google Cloud', 'Docker', 'Nginx', 'Linux / LXD', 'Firestore'],
   },
   {
-    label: 'Automatización',
+    labelKey: 'aboutStackAutomatizacion',
     color: 'purple',
     items: ['n8n', 'Make', 'IA Workflows', 'MongoDB', 'MySQL'],
   },
@@ -36,6 +38,14 @@ const item = {
 };
 
 export default function About() {
+  const { language, translations } = useContext(LanguageContext);
+  const t = translations[language];
+
+  const getGroupLabel = (labelKey) => {
+    if (t[labelKey]) return t[labelKey];
+    return labelKey;
+  };
+
   return (
     <section id="aboutme" className="section about">
       <div className="container">
@@ -46,11 +56,11 @@ export default function About() {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <span className="section-eyebrow">Sobre mí</span>
+          <span className="section-eyebrow">{t.sobreMiEyebrow}</span>
           <h2 className="section-title">
-            Construyo sistemas,
+            {t.aboutTitle}
             <br />
-            <span className="gradient-text">no solo código.</span>
+            <span className="gradient-text">{t.aboutTitleGradient}</span>
           </h2>
         </motion.div>
 
@@ -74,25 +84,27 @@ export default function About() {
               </span>
             </div>
 
+            <p className="about__text">{t.aboutBio1}</p>
             <p className="about__text">
-              Soy desarrollador Full-Stack especializado en arquitecturas cloud,
-              plataformas SaaS y automatización con IA. Me mueve construir
-              sistemas que resuelvan problemas reales — no solo implementar
-              features, sino diseñar soluciones completas desde la base de datos
-              hasta la interfaz.
+              {language === 'es' ? (
+                <>
+                  Actualmente lidero el desarrollo de <strong>Di-Mo</strong>, una
+                  plataforma SaaS para el sector de la arquitectura que sincroniza
+                  datos en tiempo real entre una app móvil en Unity y la nube. Antes
+                  de eso, formé a más de 100 desarrolladores en Factoría F5 y trabajé
+                  en múltiples proyectos web con Vue, Laravel y React.
+                </>
+              ) : (
+                <>
+                  I currently lead the development of <strong>Di-Mo</strong>, a SaaS
+                  platform for the architecture sector that syncs data in real time
+                  between a Unity mobile app and the cloud. Before that, I trained
+                  100+ developers at Factoría F5 and worked on multiple web projects
+                  with Vue, Laravel and React.
+                </>
+              )}
             </p>
-            <p className="about__text">
-              Actualmente lidero el desarrollo de <strong>Di-Mo</strong>, una
-              plataforma SaaS para el sector de la arquitectura que sincroniza
-              datos en tiempo real entre una app móvil en Unity y la nube. Antes
-              de eso, formé a más de 100 desarrolladores en Factoría F5 y trabajé
-              en múltiples proyectos web con Vue, Laravel y React.
-            </p>
-            <p className="about__text">
-              Lo que más me interesa ahora: la intersección entre desarrollo
-              backend, infraestructura cloud y automatización con IA para crear
-              flujos que eliminan trabajo manual.
-            </p>
+            <p className="about__text">{t.aboutBio3}</p>
 
             <div className="about__links">
               <a
@@ -125,9 +137,9 @@ export default function About() {
             viewport={{ once: true }}
           >
             {STACK_GROUPS.map((group) => (
-              <motion.div key={group.label} className="about__stack-group" variants={item}>
+              <motion.div key={group.labelKey} className="about__stack-group" variants={item}>
                 <span className={`about__stack-label about__stack-label--${group.color}`}>
-                  {group.label}
+                  {getGroupLabel(group.labelKey)}
                 </span>
                 <div className="about__stack-chips">
                   {group.items.map((tech) => (

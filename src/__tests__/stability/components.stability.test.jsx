@@ -49,7 +49,7 @@ describe('Component stability: renders without crashing', () => {
   });
 
   test('Footer renders without crashing', () => {
-    expect(() => render(<Footer />)).not.toThrow();
+    expect(() => renderWithContext(Footer)).not.toThrow();
   });
 
   test('Contact renders without crashing', () => {
@@ -61,7 +61,7 @@ describe('Component stability: renders without crashing', () => {
   });
 
   test('NewComponent renders without crashing', () => {
-    expect(() => render(<NewComponent />)).not.toThrow();
+    expect(() => renderWithContext(NewComponent)).not.toThrow();
   });
 });
 
@@ -89,7 +89,7 @@ describe('Component stability: content checks', () => {
   });
 
   test('Footer has social links', () => {
-    const { container } = render(<Footer />);
+    const { container } = renderWithContext(Footer);
     const links = container.querySelectorAll('a[href]');
     expect(links.length).toBeGreaterThan(0);
     const hrefs = Array.from(links).map((l) => l.getAttribute('href'));

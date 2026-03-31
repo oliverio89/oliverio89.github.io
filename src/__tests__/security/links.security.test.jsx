@@ -19,7 +19,7 @@ beforeEach(() => {
 
 describe('Link security: target=_blank must have rel=noopener noreferrer', () => {
   test('Footer: all target=_blank links have rel=noopener noreferrer', () => {
-    const { container } = render(<Footer />);
+    const { container } = renderWithContext(Footer);
     const blankLinks = container.querySelectorAll('a[target="_blank"]');
     expect(blankLinks.length).toBeGreaterThan(0);
     blankLinks.forEach((link) => {
@@ -46,7 +46,7 @@ describe('Link security: target=_blank must have rel=noopener noreferrer', () =>
   });
 
   test('Footer: LinkedIn link points to expected domain (linkedin.com)', () => {
-    const { container } = render(<Footer />);
+    const { container } = renderWithContext(Footer);
     const links = Array.from(container.querySelectorAll('a[href]'));
     const linkedinLink = links.find((link) =>
       link.getAttribute('href').includes('linkedin.com')

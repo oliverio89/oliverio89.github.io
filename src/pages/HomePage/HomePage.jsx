@@ -20,8 +20,8 @@ export default function HomePage() {
           <About />
           <Experience />
           <Stack />
-          <Projects />
           <DesignLab />
+          <Projects />
           <Contact />
         </main>
         <Footer />

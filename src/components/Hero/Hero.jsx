@@ -1,13 +1,14 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useContext } from 'react';
 import { motion } from 'framer-motion';
 import { FiArrowDown, FiMail } from 'react-icons/fi';
 import { FaGithub, FaLinkedinIn } from 'react-icons/fa';
+import { LanguageContext } from '../../contexts/LanguageContext.js';
 import './Hero.css';
 
 const ROLES = [
   'Lead Full-Stack Developer',
   'Platform Architect',
-  'Automatización & IA',
+  'Automation & AI',
   'SaaS Builder',
 ];
 
@@ -38,6 +39,8 @@ function useTypewriter(words, speed = 90) {
 }
 
 export default function Hero() {
+  const { language, translations } = useContext(LanguageContext);
+  const t = translations[language];
   const role = useTypewriter(ROLES);
 
   return (
@@ -62,7 +65,7 @@ export default function Hero() {
             transition={{ delay: 0.2, duration: 0.5 }}
           >
             <span className="hero__status-dot" />
-            Disponible para proyectos
+            {t.disponible}
           </motion.span>
 
           <motion.h1
@@ -94,9 +97,9 @@ export default function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.6, duration: 0.6 }}
           >
-            Diseño sistemas que conectan tecnología con problemas reales.
+            {t.heroSubtitle}
             <br />
-            Desde arquitecturas SaaS en la nube hasta automatizaciones con IA.
+            {t.heroSubtitle2}
           </motion.p>
 
           <motion.div
@@ -106,11 +109,11 @@ export default function Hero() {
             transition={{ delay: 0.75, duration: 0.5 }}
           >
             <a href="#experiencia" className="btn-primary">
-              Ver mi experiencia
+              {t.verExperiencia}
               <FiArrowDown />
             </a>
             <a href="#contact" className="btn-ghost">
-              Contactar
+              {t.contactar}
               <FiMail />
             </a>
           </motion.div>
@@ -157,13 +160,13 @@ export default function Hero() {
           transition={{ delay: 0.5, duration: 0.7 }}
         >
           {[
-            { value: '3+', label: 'Años de experiencia' },
-            { value: '5', label: 'Empresas' },
-            { value: '10+', label: 'Stacks dominados' },
+            { value: '3+', labelKey: 'anosExp' },
+            { value: '5', labelKey: 'empresas' },
+            { value: '10+', labelKey: 'stacksDominados' },
           ].map((stat) => (
-            <div key={stat.label} className="hero__stat">
+            <div key={stat.labelKey} className="hero__stat">
               <span className="hero__stat-value gradient-text">{stat.value}</span>
-              <span className="hero__stat-label">{stat.label}</span>
+              <span className="hero__stat-label">{t[stat.labelKey]}</span>
             </div>
           ))}
         </motion.div>

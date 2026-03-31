@@ -1,8 +1,6 @@
 import { useState, useEffect, useContext } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { LanguageContext } from '../../contexts/LanguageContext.js';
-import espana from '../../resources/images/icons8-spain-48.png';
-import inglaterra from '../../resources/images/icons8-united-kingdom-48.png';
 import { FiMenu, FiX } from 'react-icons/fi';
 import './navbar.css';
 
@@ -16,7 +14,6 @@ const NAV_LINKS = [
 
 function Navbarr() {
   const { language, translations, changeLanguage } = useContext(LanguageContext);
-  const [lang, setIdioma] = useState('en');
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
 
@@ -27,8 +24,7 @@ function Navbarr() {
   }, []);
 
   const handleLanguageChange = () => {
-    setIdioma(lang === 'es' ? 'en' : 'es');
-    changeLanguage(lang);
+    changeLanguage(language === 'es' ? 'en' : 'es');
   };
 
   const closeMenu = () => setMenuOpen(false);
@@ -56,11 +52,9 @@ function Navbarr() {
         {/* Actions */}
         <div className="navbar__actions">
           <button onClick={handleLanguageChange} className="botonIdioma" aria-label="Cambiar idioma">
-            <img
-              className="iconLenguage"
-              src={lang === 'es' ? espana : inglaterra}
-              alt={lang === 'es' ? 'Español' : 'English'}
-            />
+            <span className={`lang-opt${language === 'en' ? ' lang-opt--active' : ''}`}>EN</span>
+            <span className="lang-sep">|</span>
+            <span className={`lang-opt${language === 'es' ? ' lang-opt--active' : ''}`}>ES</span>
           </button>
           <button
             className="navbar__burger"

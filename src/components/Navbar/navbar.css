@@ -72,19 +72,31 @@
 .botonIdioma {
   display: flex;
   align-items: center;
-  justify-content: center;
-  width: 38px;
-  height: 38px;
+  gap: 6px;
+  height: 36px;
+  padding: 0 12px;
   background: var(--bg-card);
   border: 1px solid var(--border);
-  border-radius: var(--radius-sm);
+  border-radius: 100px;
   cursor: pointer;
-  padding: 0;
   transition: var(--transition);
-  overflow: hidden;
 }
-.botonIdioma:hover { border-color: var(--border-hover); transform: scale(1.05); }
-.iconLenguage { width: 22px; height: 22px; object-fit: cover; border-radius: 2px; }
+.botonIdioma:hover { border-color: var(--accent); }
+.lang-opt {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  color: var(--text-muted);
+  transition: color 0.2s;
+}
+.lang-opt--active {
+  color: var(--accent-light);
+}
+.lang-sep {
+  font-size: 0.7rem;
+  color: var(--border-hover);
+  user-select: none;
+}
 .navbar__burger {
   display: none;
   align-items: center;

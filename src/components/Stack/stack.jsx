@@ -54,12 +54,12 @@ export default function Stack() {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <span className="section-eyebrow">Stack</span>
+          <span className="section-eyebrow">{translations[language].stackEyebrow}</span>
           <h2 className="section-title">
             {translations[language].Stack}
           </h2>
           <p className="section-desc">
-            Tecnologías con las que construyo productos reales a diario.
+            {translations[language].stackDesc}
           </p>
         </motion.div>
 

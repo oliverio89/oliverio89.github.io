@@ -1,7 +1,6 @@
-import { useState } from 'react';
+import { useState, useContext } from 'react';
 import { motion } from 'framer-motion';
 import { FiExternalLink, FiGithub, FiUser, FiLayers } from 'react-icons/fi';
-import { useContext } from 'react';
 import { LanguageContext } from '../../contexts/LanguageContext.js';
 import { projects } from './data';
 import './proyects.css';
@@ -17,6 +16,7 @@ const item = {
 
 export default function Projects() {
   const { language, translations } = useContext(LanguageContext);
+  const t = translations[language];
   const [hovered, setHovered] = useState(null);
 
   return (
@@ -29,13 +29,11 @@ export default function Projects() {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <span className="section-eyebrow">Proyectos</span>
+          <span className="section-eyebrow">{t.proyectosEyebrow}</span>
           <h2 className="section-title">
-            {translations[language].Aplicaciones}
+            {t.Aplicaciones}
           </h2>
-          <p className="section-desc">
-            Cada proyecto cuenta el problema que resolvía, mi rol y las decisiones técnicas que tomé.
-          </p>
+          <p className="section-desc">{t.proyectosDesc}</p>
         </motion.div>
 
         <motion.div
@@ -48,7 +46,7 @@ export default function Projects() {
           {projects.map((project, i) => (
             <motion.article
               key={project.title}
-              className={`project-card${i === 0 ? ' project-card--featured' : ''}`}
+              className={`project-card${i === 0 ? ' project-card--featured' : ''}${project.hideImage ? ' project-card--text-only' : ''}`}
               variants={item}
               onMouseEnter={() => setHovered(project.title)}
               onMouseLeave={() => setHovered(null)}
@@ -74,7 +72,7 @@ export default function Projects() {
                 <span className="project-card__subtitle">{project.subtitle}</span>
 
                 <h3 className="project-card__title">
-                  {project.hideProjectLink ? (
+                  {project.hideProjectLink || project.hideAllLinks ? (
                     <span className="project-card__title-link">{project.title}</span>
                   ) : (
                     <a
@@ -95,7 +93,7 @@ export default function Projects() {
                   <div className="project-card__what">
                     <span className="project-card__what-label">
                       <FiLayers size={11} />
-                      Qué construí
+                      {t.queConstrue}
                     </span>
                     <p className="project-card__what-text">{project.what}</p>
                   </div>
@@ -118,7 +116,7 @@ export default function Projects() {
                         className="project-card__btn"
                       >
                         <FiExternalLink size={14} />
-                        Ver proyecto
+                        {t.verProyecto}
                       </a>
                     )}
                     <a

@@ -1,6 +1,7 @@
-import { useState } from 'react';
+import { useState, useContext } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { FiBriefcase, FiCalendar, FiMapPin, FiChevronDown } from 'react-icons/fi';
+import { FiBriefcase, FiCalendar, FiMapPin, FiChevronDown, FiExternalLink } from 'react-icons/fi';
+import { LanguageContext } from '../../contexts/LanguageContext.js';
 import './NewComponent.css';
 
 const EXPERIENCE = [
@@ -42,6 +43,10 @@ const EXPERIENCE = [
       'Capacité al personal en el uso de nuevas herramientas digitales.',
     ],
     stack: ['Linux', 'WordPress', 'Nginx', 'GDPR', 'Soporte técnico'],
+    links: [
+      { label: 'nosotras.app', url: 'https://nosotras.app/' },
+      { label: 'App Android', url: 'https://play.google.com/store/apps/details?id=com.app.nosotras&hl=es_419' },
+    ],
   },
   {
     id: 'f5',
@@ -101,6 +106,8 @@ const EXPERIENCE = [
 
 export default function NewComponent() {
   const [expanded, setExpanded] = useState('dimo');
+  const { language, translations } = useContext(LanguageContext);
+  const t = translations[language];
 
   return (
     <section id="experiencia" className="section experience">
@@ -112,16 +119,13 @@ export default function NewComponent() {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <span className="section-eyebrow">Trayectoria</span>
+          <span className="section-eyebrow">{t.trayectoriaEyebrow}</span>
           <h2 className="section-title">
-            Experiencia
+            {t.expTitle}
             <br />
-            <span className="gradient-text">profesional.</span>
+            <span className="gradient-text">{t.expTitleGradient}</span>
           </h2>
-          <p className="section-desc">
-            3+ años construyendo plataformas, enseñando y resolviendo problemas
-            reales con tecnología.
-          </p>
+          <p className="section-desc">{t.expDesc}</p>
         </motion.div>
 
         <div className="experience__list">
@@ -146,7 +150,7 @@ export default function NewComponent() {
                 <div className="exp-card__top">
                   <div className="exp-card__left">
                     {exp.featured && (
-                      <span className="exp-card__badge">Actual</span>
+                      <span className="exp-card__badge">{language === 'es' ? 'Actual' : 'Current'}</span>
                     )}
                     <h3 className="exp-card__role">{exp.role}</h3>
                     <p className="exp-card__company">
@@ -173,10 +177,28 @@ export default function NewComponent() {
                 <p className="exp-card__summary">{exp.summary}</p>
 
                 <div className="exp-card__stack">
-                  {exp.stack.map((t) => (
-                    <span key={t} className="tech-badge">{t}</span>
+                  {exp.stack.map((tech) => (
+                    <span key={tech} className="tech-badge">{tech}</span>
                   ))}
                 </div>
+
+                {exp.links && exp.links.length > 0 && (
+                  <div className="exp-card__header-links">
+                    {exp.links.map((link) => (
+                      <a
+                        key={link.url}
+                        href={link.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="exp-card__link-btn"
+                        onClick={(e) => e.stopPropagation()}
+                      >
+                        <FiExternalLink size={13} />
+                        {link.label}
+                      </a>
+                    ))}
+                  </div>
+                )}
               </button>
 
               {/* Expanded detail */}
@@ -190,7 +212,7 @@ export default function NewComponent() {
                     transition={{ duration: 0.35, ease: [0.4, 0, 0.2, 1] }}
                   >
                     <div className="exp-card__detail-inner">
-                      <p className="exp-card__detail-title">Lo que hice:</p>
+                      <p className="exp-card__detail-title">{t.loQueHice}</p>
                       <ul className="exp-card__what">
                         {exp.what.map((point) => (
                           <li key={point} className="exp-card__what-item">
@@ -199,6 +221,25 @@ export default function NewComponent() {
                           </li>
                         ))}
                       </ul>
+                      {exp.links && exp.links.length > 0 && (
+                        <div className="exp-card__links">
+                          <p className="exp-card__detail-title">{t.verEnProduccion}</p>
+                          <div className="exp-card__links-row">
+                            {exp.links.map((link) => (
+                              <a
+                                key={link.url}
+                                href={link.url}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="exp-card__link-btn"
+                              >
+                                <FiExternalLink size={13} />
+                                {link.label}
+                              </a>
+                            ))}
+                          </div>
+                        </div>
+                      )}
                     </div>
                   </motion.div>
                 )}
