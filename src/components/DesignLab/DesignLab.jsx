@@ -1,65 +1,8 @@
-import { useState, useEffect, useRef } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import { FiChevronLeft, FiChevronRight, FiEye, FiCpu } from 'react-icons/fi';
-import './DesignLab.css';
-
-/* ── SLIDES ──────────────────────────────────────────────────────── */
-const SLIDES = [
-  {
-    id: 'color',
-    label: 'Color Psychology',
-    stat: '+80% de las decisiones de compra se basan en el color',
-    source: 'Instituto de Psicología del Color, 2022',
-    title: 'El cerebro decide en 90ms',
-    body: 'Antes de leer una palabra, tu sistema límbico ya procesó el color. El violeta-índigo activa las regiones asociadas a creatividad, confianza e innovación tecnológica. El contraste frío-cálido genera tensión visual que mantiene el ojo en movimiento.',
-    Demo: ColorDemo,
-  },
-  {
-    id: 'depth',
-    label: 'Depth & Layers',
-    stat: 'Las interfaces con profundidad reducen el error cognitivo un 34%',
-    source: 'Nielsen Norman Group, 2021',
-    title: 'El ojo busca el espacio',
-    body: '500 millones de años de evolución han entrenado al cerebro para interpretar profundidad desde sombras y transparencias. El glassmorphism explota esta tendencia biológica: el blur simula material real, y el cerebro lo clasifica como "premium" de forma automática.',
-    Demo: DepthDemo,
-  },
-  {
-    id: 'motion',
-    label: 'Biological Motion',
-    stat: 'El movimiento captura la atención 5× más rápido que el contenido estático',
-    source: 'MIT Media Lab, 2019',
-    title: 'Las neuronas espejo se activan',
-    body: 'El sistema nervioso primitivo no distingue entre movimiento real y animado. Micro-interacciones fluidas liberan dopamina porque el cerebro anticipa el resultado antes de que ocurra. La clave: animaciones bajo 300ms parecen instantáneas; sobre 500ms se perciben como lentas.',
-    Demo: MotionDemo,
-  },
-  {
-    id: 'gestalt',
-    label: 'Gestalt & Pattern',
-    stat: 'El cerebro procesa patrones visuales 60.000× más rápido que texto',
-    source: 'MIT Press — Visual Cognition, 2020',
-    title: 'Tu cerebro completa lo incompleto',
-    body: 'La ley de cierre (Gestalt, 1923): el cerebro rellena automáticamente los huecos para crear formas completas. Interfaces que usan esta tendencia reducen la carga cognitiva y se perciben como más simples aunque sean igual de complejas.',
-    Demo: GestaltDemo,
-  },
-  {
-    id: 'space',
-    label: 'Negative Space',
-    stat: 'El 30% de espacio vacío aumenta la retención de información un 20%',
-    source: 'Journal of Applied Psychology, 2023',
-    title: 'El vacío tiene peso visual',
-    body: 'El espacio negativo no es ausencia de diseño — es diseño. Estructura el flujo visual, da peso a los elementos y reduce la carga cognitiva. Las marcas más valiosas del mundo (Apple, Nike, Rolex) usan el espacio vacío como elemento principal de identidad.',
-    Demo: SpaceDemo,
-  },
-  {
-    id: 'hierarchy',
-    label: 'Visual Hierarchy',
-    stat: 'Una jerarquía clara aumenta la conversión hasta un 47%',
-    source: 'Baymard Institute, 2022',
-    title: 'El ojo sigue un mapa invisible',
-    body: 'El patrón F y Z de lectura son movimientos oculares involuntarios. Una jerarquía bien diseñada dirige la mirada sin que el usuario lo perciba. Tamaño, peso, color y posición forman un sistema de señales que el cerebro obedece antes de procesar el contenido.',
-    Demo: HierarchyDemo,
-  },
-];
+import { useState, useEffect, useRef, useContext } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { FiChevronLeft, FiChevronRight, FiEye, FiCpu } from "react-icons/fi";
+import { LanguageContext } from "../../contexts/LanguageContext.js";
+import "./DesignLab.css";
 
 const DURATION = 5500;
 
@@ -74,9 +17,9 @@ function ColorDemo() {
       <div className="demo-color__blob demo-color__blob--3" />
       <div className="demo-color__grid" />
       <div className="demo-color__label">
-        <span style={{ color: '#818cf8' }}>Indigo</span> ·{' '}
-        <span style={{ color: '#22d3ee' }}>Cyan</span> ·{' '}
-        <span style={{ color: '#a78bfa' }}>Violet</span>
+        <span style={{ color: "#818cf8" }}>Indigo</span> ·{" "}
+        <span style={{ color: "#22d3ee" }}>Cyan</span> ·{" "}
+        <span style={{ color: "#a78bfa" }}>Violet</span>
       </div>
     </div>
   );
@@ -108,9 +51,9 @@ function MotionDemo() {
           key={i}
           className="motion-bar"
           style={{
-            '--i': i,
-            '--delay': `${i * 0.12}s`,
-            '--height': `${30 + Math.sin(i * 0.9) * 20 + 20}%`,
+            "--i": i,
+            "--delay": `${i * 0.12}s`,
+            "--height": `${30 + Math.sin(i * 0.9) * 20 + 20}%`,
           }}
         />
       ))}
@@ -121,11 +64,11 @@ function MotionDemo() {
   );
 }
 
-function GestaltDemo() {
+function GestaltDemo({ label }) {
   const SHAPES = [
-    { x: 30, y: 30, r: 38, dash: '60 180', offset: 0, delay: 0 },
-    { x: 70, y: 30, r: 38, dash: '120 120', offset: 0, delay: 0.3 },
-    { x: 50, y: 68, r: 38, dash: '90 150', offset: 0, delay: 0.6 },
+    { x: 30, y: 30, r: 38, dash: "60 180", offset: 0, delay: 0 },
+    { x: 70, y: 30, r: 38, dash: "120 120", offset: 0, delay: 0.3 },
+    { x: 50, y: 68, r: 38, dash: "90 150", offset: 0, delay: 0.6 },
   ];
   return (
     <div className="demo demo--gestalt">
@@ -166,18 +109,18 @@ function GestaltDemo() {
         <circle cx="68" cy="54" r="3" fill="#22d3ee" opacity="0.9" />
         <circle cx="32" cy="54" r="3" fill="#a78bfa" opacity="0.9" />
       </svg>
-      <p className="gestalt-label">¿Ves el triángulo?</p>
+      <p className="gestalt-label">{label}</p>
     </div>
   );
 }
 
-function SpaceDemo() {
+function SpaceDemo({ t1, t2 }) {
   return (
     <div className="demo demo--space">
       <div className="space-content">
-        <div className="space-word space-word--big">Silencio</div>
+        <div className="space-word space-word--big">{t1}</div>
         <div className="space-rule" />
-        <div className="space-word space-word--sm">es también diseño</div>
+        <div className="space-word space-word--sm">{t2}</div>
       </div>
       <div className="space-dot space-dot--1" />
       <div className="space-dot space-dot--2" />
@@ -189,30 +132,39 @@ function HierarchyDemo() {
   return (
     <div className="demo demo--hierarchy">
       <div className="hier-block hier-block--h1">
-        <div className="hier-fill hier-fill--accent" style={{ width: '72%' }} />
+        <div className="hier-fill hier-fill--accent" style={{ width: "72%" }} />
       </div>
       <div className="hier-row">
         <div className="hier-block hier-block--badge">
-          <div className="hier-fill hier-fill--cyan" style={{ width: '100%' }} />
+          <div
+            className="hier-fill hier-fill--cyan"
+            style={{ width: "100%" }}
+          />
         </div>
         <div className="hier-block hier-block--badge">
-          <div className="hier-fill hier-fill--purple" style={{ width: '100%' }} />
+          <div
+            className="hier-fill hier-fill--purple"
+            style={{ width: "100%" }}
+          />
         </div>
       </div>
       <div className="hier-block hier-block--h2">
-        <div className="hier-fill" style={{ width: '58%' }} />
+        <div className="hier-fill" style={{ width: "58%" }} />
       </div>
       <div className="hier-block hier-block--p">
-        <div className="hier-fill" style={{ width: '95%' }} />
+        <div className="hier-fill" style={{ width: "95%" }} />
       </div>
       <div className="hier-block hier-block--p">
-        <div className="hier-fill" style={{ width: '80%' }} />
+        <div className="hier-fill" style={{ width: "80%" }} />
       </div>
       <div className="hier-block hier-block--p">
-        <div className="hier-fill" style={{ width: '65%' }} />
+        <div className="hier-fill" style={{ width: "65%" }} />
       </div>
       <div className="hier-block hier-block--btn">
-        <div className="hier-fill hier-fill--accent" style={{ width: '100%' }} />
+        <div
+          className="hier-fill hier-fill--accent"
+          style={{ width: "100%" }}
+        />
       </div>
       <div className="hier-arrow hier-arrow--1" />
       <div className="hier-arrow hier-arrow--2" />
@@ -221,8 +173,25 @@ function HierarchyDemo() {
   );
 }
 
+const SLIDE_DEMOS = {
+  color: ColorDemo,
+  depth: DepthDemo,
+  motion: MotionDemo,
+  gestalt: GestaltDemo,
+  space: SpaceDemo,
+  hierarchy: HierarchyDemo,
+};
+
 /* ── MAIN COMPONENT ──────────────────────────────────────────────── */
 export default function DesignLab() {
+  const { language, translations } = useContext(LanguageContext);
+  const t = translations[language];
+
+  const SLIDES = t.designLabSlides.map((s) => ({
+    ...s,
+    Demo: SLIDE_DEMOS[s.id],
+  }));
+
   const [current, setCurrent] = useState(0);
   const [direction, setDirection] = useState(1);
   const [paused, setPaused] = useState(false);
@@ -277,17 +246,14 @@ export default function DesignLab() {
         >
           <span className="section-eyebrow">
             <FiCpu size={13} />
-            Diseño & Psicología Visual
+            {t.designLabEyebrow}
           </span>
           <h2 className="section-title">
-            Por qué <span className="gradient-text">este diseño</span>
-            <br />
-            funciona en tu cerebro.
+            {t.designLabTitle}
+            <span className="gradient-text">{t.designLabTitleGradient}</span>
+            {t.designLabTitleSuffix}
           </h2>
-          <p className="section-desc">
-            Cada decisión visual tiene respaldo en neurociencia y psicología
-            cognitiva. Aquí lo demuestro en vivo.
-          </p>
+          <p className="section-desc">{t.designLabDesc}</p>
         </motion.div>
 
         {/* Lab card */}
@@ -318,7 +284,11 @@ export default function DesignLab() {
                   exit="exit"
                   transition={{ duration: 0.45, ease: [0.4, 0, 0.2, 1] }}
                 >
-                  <Demo />
+                  <Demo
+                    label={t.designLabGestaltLabel}
+                    t1={t.designLabSpaceText1}
+                    t2={t.designLabSpaceText2}
+                  />
                 </motion.div>
               </AnimatePresence>
 
@@ -346,7 +316,11 @@ export default function DesignLab() {
                   initial="enter"
                   animate="center"
                   exit="exit"
-                  transition={{ duration: 0.45, ease: [0.4, 0, 0.2, 1], delay: 0.05 }}
+                  transition={{
+                    duration: 0.45,
+                    ease: [0.4, 0, 0.2, 1],
+                    delay: 0.05,
+                  }}
                 >
                   <div className="lab-stat">
                     <span className="lab-stat__number">{slide.stat}</span>
@@ -361,7 +335,7 @@ export default function DesignLab() {
                     {SLIDES.map((s, i) => (
                       <button
                         key={s.id}
-                        className={`lab-dot${i === current ? ' lab-dot--active' : ''}`}
+                        className={`lab-dot${i === current ? " lab-dot--active" : ""}`}
                         onClick={() => go(i)}
                         aria-label={s.label}
                       />
@@ -373,10 +347,16 @@ export default function DesignLab() {
           </div>
 
           {/* Arrow controls */}
-          <button className="lab-arrow lab-arrow--prev" onClick={() => go(current - 1)}>
+          <button
+            className="lab-arrow lab-arrow--prev"
+            onClick={() => go(current - 1)}
+          >
             <FiChevronLeft size={20} />
           </button>
-          <button className="lab-arrow lab-arrow--next" onClick={() => go(current + 1)}>
+          <button
+            className="lab-arrow lab-arrow--next"
+            onClick={() => go(current + 1)}
+          >
             <FiChevronRight size={20} />
           </button>
         </div>

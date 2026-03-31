@@ -269,6 +269,68 @@ const translations = {
     inicio: "Inicio",
     hechoConAmor: "Hecho con",
     footerTagline: "Full-Stack Developer · Platform Architect · AI Automation",
+
+    // Design Lab
+    designLabEyebrow: "Diseño & Psicología Visual",
+    designLabTitle: "Por qué ",
+    designLabTitleGradient: "este diseño",
+    designLabTitleSuffix: " funciona en tu cerebro.",
+    designLabDesc:
+      "Cada decisión visual tiene respaldo en neurociencia y psicología cognitiva. Aquí lo demuestro en vivo.",
+    designLabPill: "Psicología Visual",
+    designLabGestaltLabel: "¿Ves el triángulo?",
+    designLabSpaceText1: "Silencio",
+    designLabSpaceText2: "es también diseño",
+    designLabSlides: [
+      {
+        id: "color",
+        label: "Color Psychology",
+        stat: "+80% de las decisiones de compra se basan en el color",
+        source: "Instituto de Psicología del Color, 2022",
+        title: "El cerebro decide en 90ms",
+        body: "Antes de leer una palabra, tu sistema límbico ya procesó el color. El violeta-índigo activa las regiones asociadas a creatividad, confianza e innovación tecnológica. El contraste frío-cálido genera tensión visual que mantiene el ojo en movimiento.",
+      },
+      {
+        id: "depth",
+        label: "Depth & Layers",
+        stat: "Las interfaces con profundidad reducen el error cognitivo un 34%",
+        source: "Nielsen Norman Group, 2021",
+        title: "El ojo busca el espacio",
+        body: '500 millones de años de evolución han entrenado al cerebro para interpretar profundidad desde sombras y transparencias. El glassmorphism explota esta tendencia biológica: el blur simula material real, y el cerebro lo clasifica como "premium" de forma automática.',
+      },
+      {
+        id: "motion",
+        label: "Biological Motion",
+        stat: "El movimiento captura la atención 5× más rápido que el contenido estático",
+        source: "MIT Media Lab, 2019",
+        title: "Las neuronas espejo se activan",
+        body: "El sistema nervioso primitivo no distingue entre movimiento real y animado. Micro-interacciones fluidas liberan dopamina porque el cerebro anticipa el resultado antes de que ocurra. La clave: animaciones bajo 300ms parecen instantáneas; sobre 500ms se perciben como lentas.",
+      },
+      {
+        id: "gestalt",
+        label: "Gestalt & Pattern",
+        stat: "El cerebro procesa patrones visuales 60.000× más rápido que texto",
+        source: "MIT Press — Visual Cognition, 2020",
+        title: "Tu cerebro completa lo incompleto",
+        body: "La ley de cierre (Gestalt, 1923): el cerebro rellena automáticamente los huecos para crear formas completas. Interfaces que usan esta tendencia reducen la carga cognitiva y se perciben como más simples aunque sean igual de complejas.",
+      },
+      {
+        id: "space",
+        label: "Negative Space",
+        stat: "El 30% de espacio vacío aumenta la retención de información un 20%",
+        source: "Journal of Applied Psychology, 2023",
+        title: "El vacío tiene peso visual",
+        body: "El espacio negativo no es ausencia de diseño — es diseño. Estructura el flujo visual, da peso a los elementos y reduce la carga cognitiva. Las marcas más valiosas del mundo (Apple, Nike, Rolex) usan el espacio vacío como elemento principal de identidad.",
+      },
+      {
+        id: "hierarchy",
+        label: "Visual Hierarchy",
+        stat: "Una jerarquía clara aumenta la conversión hasta un 47%",
+        source: "Baymard Institute, 2022",
+        title: "El ojo sigue un mapa invisible",
+        body: "El patrón F y Z de lectura son movimientos oculares involuntarios. Una jerarquía bien diseñada dirige la mirada sin que el usuario lo perciba. Tamaño, peso, color y posición forman un sistema de señales que el cerebro obedece antes de procesar el contenido.",
+      },
+    ],
   },
   en: {
     titulo: "Víctor Moreno García",
@@ -537,9 +599,72 @@ const translations = {
     contactLocation: "Motril, Spain",
 
     // Footer
+    // Footers
     inicio: "Home",
     hechoConAmor: "Made with",
     footerTagline: "Full-Stack Developer · Platform Architect · AI Automation",
+
+    // Design Lab
+    designLabEyebrow: "Design & Visual Psychology",
+    designLabTitle: "Why ",
+    designLabTitleGradient: "this design",
+    designLabTitleSuffix: " works in your brain.",
+    designLabDesc:
+      "Every visual decision is backed by neuroscience and cognitive psychology. Here I demonstrate it live.",
+    designLabPill: "Visual Psychology",
+    designLabGestaltLabel: "Do you see the triangle?",
+    designLabSpaceText1: "Silence",
+    designLabSpaceText2: "is also design",
+    designLabSlides: [
+      {
+        id: "color",
+        label: "Color Psychology",
+        stat: "+80% of purchasing decisions are based on color",
+        source: "Color Psychology Institute, 2022",
+        title: "The brain decides in 90ms",
+        body: "Before reading a single word, your limbic system has already processed the color. Indigo-violet activates regions associated with creativity, trust, and technological innovation. Cold-warm contrast generates visual tension that keeps the eye moving.",
+      },
+      {
+        id: "depth",
+        label: "Depth & Layers",
+        stat: "Interfaces with depth reduce cognitive error by 34%",
+        source: "Nielsen Norman Group, 2021",
+        title: "The eye seeks space",
+        body: '500 million years of evolution have trained the brain to interpret depth from shadows and transparencies. Glassmorphism exploits this biological tendency: blur simulates real material, and the brain automatically classifies it as "premium".',
+      },
+      {
+        id: "motion",
+        label: "Biological Motion",
+        stat: "Motion captures attention 5× faster than static content",
+        source: "MIT Media Lab, 2019",
+        title: "Mirror neurons activate",
+        body: "The primitive nervous system does not distinguish between real and animated motion. Fluid micro-interactions release dopamine because the brain anticipates the result before it happens. Key: animations under 300ms seem instantaneous; over 500ms they are perceived as slow.",
+      },
+      {
+        id: "gestalt",
+        label: "Gestalt & Pattern",
+        stat: "The brain processes visual patterns 60,000× faster than text",
+        source: "MIT Press — Visual Cognition, 2020",
+        title: "Your brain completes the incomplete",
+        body: "The law of closure (Gestalt, 1923): the brain automatically fills in gaps to create complete shapes. Interfaces using this tendency reduce cognitive load and are perceived as simpler even if they are equally complex.",
+      },
+      {
+        id: "space",
+        label: "Negative Space",
+        stat: "30% empty space increases information retention by 20%",
+        source: "Journal of Applied Psychology, 2023",
+        title: "Void has visual weight",
+        body: "Negative space is not absence of design — it is design. It structures visual flow, gives weight to elements, and reduces cognitive load. The world's most valuable brands (Apple, Nike, Rolex) use white space as a primary identity element.",
+      },
+      {
+        id: "hierarchy",
+        label: "Visual Hierarchy",
+        stat: "A clear hierarchy increases conversion by up to 47%",
+        source: "Baymard Institute, 2022",
+        title: "The eye follows an invisible map",
+        body: "F and Z reading patterns are involuntary eye movements. A well-designed hierarchy directs the gaze without the user perceiving it. Size, weight, color, and position form a system of signals the brain obeys before processing content.",
+      },
+    ],
   },
 };
 
