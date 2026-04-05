@@ -1,6 +1,6 @@
 import { useEffect, useState, useContext } from "react";
 import { motion } from "framer-motion";
-import { FiArrowDown, FiMail } from "react-icons/fi";
+import { FiArrowDown, FiMail, FiChevronDown } from "react-icons/fi";
 import { FaGithub, FaLinkedinIn } from "react-icons/fa";
 import { LanguageContext } from "../../contexts/LanguageContext.js";
 import "./Hero.css";
@@ -40,12 +40,36 @@ export default function Hero() {
   const role = useTypewriter(t.heroRoles || []);
 
   return (
-    <section className="hero" id="hero">
-      {/* Background grid */}
-      <div className="hero__grid" aria-hidden="true" />
-      {/* Glow blobs */}
-      <div className="hero__blob hero__blob--1" aria-hidden="true" />
-      <div className="hero__blob hero__blob--2" aria-hidden="true" />
+    <section id="hero" className="hero">
+      {/* Background effects */}
+      <div className="hero__grid" />
+
+      {/* Blobs */}
+      <div className="hero__blobs">
+        <motion.div
+          className="hero__blob hero__blob--1"
+          initial={{ opacity: 0, scale: 0.8 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 1.5, ease: "easeOut" }}
+        />
+        <motion.div
+          className="hero__blob hero__blob--2"
+          initial={{ opacity: 0, scale: 0.8 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 1.5, delay: 0.2, ease: "easeOut" }}
+        />
+      </div>
+
+      {/* Scroll indicator */}
+      <motion.div
+        className="hero__scroll"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 1.2, duration: 0.8 }}
+      >
+        <span className="hero__scroll-text">{t.scrollear || "Scroll"}</span>
+        <FiChevronDown className="hero__scroll-icon" />
+      </motion.div>
 
       <div className="container hero__content">
         <motion.div
@@ -169,16 +193,6 @@ export default function Hero() {
           ))}
         </motion.div>
       </div>
-
-      {/* Scroll hint */}
-      <motion.div
-        className="hero__scroll"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 1.2 }}
-      >
-        <FiArrowDown className="hero__scroll-icon" />
-      </motion.div>
     </section>
   );
 }
