@@ -14,7 +14,7 @@ const translations = {
     TestimoniosReferencias: "Referencias",
     Contacto: "Contacto",
     Stack: "Tecnologías",
-    Aplicaciones: "Proyectos desarrollados",
+    Aplicaciones: "Proyectos actuales",
 
     // Hero
     disponible: "Disponible para proyectos",
@@ -191,6 +191,7 @@ const translations = {
       "Cada proyecto cuenta el problema que resolvía, mi rol y las decisiones técnicas que tomé.",
     queConstrue: "Qué construí",
     verProyecto: "Ver proyecto",
+    appStore: "App Store",
     featuredBadge: "Destacado",
     projectsData: [
       {
@@ -200,44 +201,12 @@ const translations = {
           "Plataforma SaaS para el sector de la arquitectura y la construcción. Diseñé y desarrollé toda la infraestructura cloud: API REST con Node.js + TypeScript, panel de administración en React/Vite, sincronización en tiempo real entre app Unity y Firebase Firestore, y sistema de exportación de proyectos en PDF y DXF.",
         image:
           "https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=800&q=80",
-        link: "https://github.com/oliverio89",
+        link: "https://di-mo.com/",
+        storeLink: "https://apps.apple.com/es/app/di-mo/id6747068116",
+        androidLink: "https://play.google.com/store/apps/details?id=com.jjendemico.dimo&hl=es",
+        websiteLink: "https://di-mo.com/",
         what: "Backend API REST, arquitectura Firebase Firestore + GCS, panel web React/Vite, auth Firebase, exportación PDF/DXF.",
         role: "Lead Full-Stack Developer & Platform Architect",
-      },
-      {
-        title: "Dungeonize",
-        subtitle: "Primer proyecto personal — MERN Stack",
-        description:
-          "Uno de mis primeros proyectos no profesionales. Una herramienta para crear mapas de mazmorras para juegos de rol. Con él aprendí React, Node.js y MongoDB de forma práctica, y me sirvió para entender cómo estructurar una app full-stack de principio a fin.",
-        image: "https://i.imgur.com/XPTXAWE.png",
-        link: "https://dungeonize.fly.dev/",
-        what: "Frontend React, backend Node.js, base de datos MongoDB, editor visual de mapas.",
-        role: "Proyecto personal de aprendizaje",
-        hideProjectLink: true,
-      },
-      {
-        title: "Circle — Red Social Geolocalizada",
-        subtitle: "Primer proyecto en equipo — MERN Stack",
-        description:
-          "Primer proyecto colaborativo en equipo internacional. Combinamos red social y geolocalización (como Facebook + Tinder). Un reto enorme en ese momento: coordinación del equipo, Git en paralelo, integración de APIs externas. Aprendí más en esas dos semanas que en meses.",
-        image: "https://i.imgur.com/nfvTz9E.png",
-        link: "https://circle0.netlify.app/",
-        what: "Backend Express, MongoDB, API geolocalización, trabajo en equipo internacional con Git.",
-        role: "Proyecto de bootcamp en equipo",
-        hideProjectLink: true,
-      },
-      {
-        title: "Portal Empleo Paradores + SaaS Interno",
-        subtitle:
-          "Trabajo profesional en PEOPLE EXPERTS — Laravel · PHP · Vue.js",
-        description:
-          "Durante mi etapa en PEOPLE EXPERTS desarrolló el portal de empleo corporativo de Paradores y el backend del SaaS interno de la empresa. El portal gestiona candidaturas, filtros de búsqueda y panel de RRHH. El SaaS interno centralizaba la gestión de los procesos psicológicos empresariales de la compañía.",
-        image: "",
-        link: "https://paradores.portaldelcandidato.es/paradores",
-        what: "Backend Laravel/PHP, MySQL, Vue.js frontend, panel RRHH, sistema de candidaturas, SaaS interno empresarial.",
-        role: "Full-Stack Developer en PEOPLE EXPERTS (may–oct 2023)",
-        hideAllLinks: true,
-        hideImage: true,
       },
     ],
 
@@ -347,7 +316,7 @@ const translations = {
     TestimoniosReferencias: "References",
     Contacto: "Contact",
     Stack: "Tech Stack",
-    Aplicaciones: "Projects I have built",
+    Aplicaciones: "Current projects",
 
     // Hero
     disponible: "Available for projects",
@@ -523,6 +492,7 @@ const translations = {
       "Each project tells the problem it solved, my role and the technical decisions I made.",
     queConstrue: "What I built",
     verProyecto: "View project",
+    appStore: "App Store",
     featuredBadge: "Featured",
     projectsData: [
       {
@@ -532,44 +502,12 @@ const translations = {
           "SaaS platform for the architecture and construction sector. I designed and developed the entire cloud infrastructure: REST API with Node.js + TypeScript, office admin panel in React/Vite, real-time synchronization between Unity app and Firebase Firestore, and PDF/DXF project export system.",
         image:
           "https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=800&q=80",
-        link: "https://github.com/oliverio89",
+        link: "https://di-mo.com/",
+        storeLink: "https://apps.apple.com/us/app/di-mo/id6747068116",
+        androidLink: "https://play.google.com/store/apps/details?id=com.jjendemico.dimo&hl=en_US",
+        websiteLink: "https://di-mo.com/",
         what: "REST API Backend, Firebase Firestore + GCS architecture, React/Vite web panel, Firebase auth, PDF/DXF export.",
         role: "Lead Full-Stack Developer & Platform Architect",
-      },
-      {
-        title: "Dungeonize",
-        subtitle: "First personal project — MERN Stack",
-        description:
-          "One of my first non-professional projects. A tool for creating dungeon maps for role-playing games. With it, I learned React, Node.js and MongoDB hands-on, and it helped me understand how to structure a full-stack app from start to finish.",
-        image: "https://i.imgur.com/XPTXAWE.png",
-        link: "https://dungeonize.fly.dev/",
-        what: "React frontend, Node.js backend, MongoDB database, visual map editor.",
-        role: "Personal learning project",
-        hideProjectLink: true,
-      },
-      {
-        title: "Circle — Social Network",
-        subtitle: "First team project — MERN Stack",
-        description:
-          "First collaborative project in an international team. We combined a social network with geolocation (like Facebook + Tinder). A huge challenge at the time: team coordination, parallel Git, integration of external APIs. I learned more in those two weeks than in months.",
-        image: "https://i.imgur.com/nfvTz9E.png",
-        link: "https://circle0.netlify.app/",
-        what: "Express backend, MongoDB, geolocation API, international teamwork with Git.",
-        role: "Team bootcamp project",
-        hideProjectLink: true,
-      },
-      {
-        title: "Portal Empleo Paradores + Internal SaaS",
-        subtitle:
-          "Professional work at PEOPLE EXPERTS — Laravel · PHP · Vue.js",
-        description:
-          "During my time at PEOPLE EXPERTS I developed the corporate job portal for Paradores and the backend of the company's internal SaaS. The portal manages applications, search filters and HR panel. The internal SaaS centralized the management of the company's business psychological processes.",
-        image: "",
-        link: "https://paradores.portaldelcandidato.es/paradores",
-        what: "Laravel/PHP backend, MySQL, Vue.js frontend, HR panel, application system, internal corporate SaaS.",
-        role: "Full-Stack Developer at PEOPLE EXPERTS (May–Oct 2023)",
-        hideAllLinks: true,
-        hideImage: true,
       },
     ],
 

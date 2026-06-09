@@ -1,6 +1,6 @@
 import { useState, useContext } from "react";
 import { motion } from "framer-motion";
-import { FiExternalLink, FiGithub, FiUser, FiLayers } from "react-icons/fi";
+import { FiExternalLink, FiGlobe, FiShoppingBag, FiUser, FiLayers } from "react-icons/fi";
 import { LanguageContext } from "../../contexts/LanguageContext.js";
 import "./proyects.css";
 
@@ -111,26 +111,39 @@ export default function Projects() {
 
                 {!project.hideAllLinks && (
                   <div className="project-card__actions">
-                    {!project.hideProjectLink && (
+                    {project.storeLink && (
                       <a
-                        href={project.link}
+                        href={project.storeLink}
                         target="_blank"
                         rel="noopener noreferrer"
                         className="project-card__btn"
                       >
-                        <FiExternalLink size={14} />
-                        {t.verProyecto}
+                        <FiShoppingBag size={14} />
+                        {t.appStore}
                       </a>
                     )}
-                    <a
-                      href="https://github.com/oliverio89"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="project-card__btn project-card__btn--ghost"
-                    >
-                      <FiGithub size={14} />
-                      GitHub
-                    </a>
+                    {project.androidLink && (
+                      <a
+                        href={project.androidLink}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="project-card__btn"
+                      >
+                        <FiShoppingBag size={14} />
+                        Google Play
+                      </a>
+                    )}
+                    {project.websiteLink && (
+                      <a
+                        href={project.websiteLink}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="project-card__btn project-card__btn--ghost"
+                      >
+                        <FiGlobe size={14} />
+                        Web
+                      </a>
+                    )}
                   </div>
                 )}
               </div>
