@@ -165,7 +165,7 @@ export default function Contact() {
                   <FiArrowRight size={14} className="contact-link__arrow" />
                 </a>
                 <a
-                  href="https://github.com/oliverio89"
+                  href="https://github.com/victormrngarcia"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="contact-link"
@@ -175,13 +175,13 @@ export default function Contact() {
                   <FiArrowRight size={14} className="contact-link__arrow" />
                 </a>
                 <a
-                  href="mailto:oliverio89@gmail.com"
+                  href="mailto:victor.mrngarcia@gmail.com"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="contact-link"
                 >
                   <FiMail size={20} />
-                  <span>oliverio89@gmail.com</span>
+                  <span>victor.mrngarcia@gmail.com</span>
                   <FiArrowRight size={14} className="contact-link__arrow" />
                 </a>
               </div>

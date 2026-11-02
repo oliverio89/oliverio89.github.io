@@ -145,7 +145,7 @@ export default function Hero() {
             transition={{ delay: 0.9 }}
           >
             <a
-              href="https://github.com/oliverio89"
+              href="https://github.com/victormrngarcia"
               target="_blank"
               rel="noopener noreferrer"
               className="hero__social-link"
@@ -163,7 +163,7 @@ export default function Hero() {
               <FaLinkedinIn size={20} />
             </a>
             <a
-              href="mailto:oliverio89@gmail.com"
+              href="mailto:victor.mrngarcia@gmail.com"
               className="hero__social-link"
               aria-label="Email"
             >
@@ -180,7 +180,7 @@ export default function Hero() {
           transition={{ delay: 0.5, duration: 0.7 }}
         >
           {[
-            { value: "3+", labelKey: "anosExp" },
+            { value: "4+", labelKey: "anosExp" },
             { value: "5", labelKey: "empresas" },
             { value: "10+", labelKey: "stacksDominados" },
           ].map((stat) => (

@@ -99,7 +99,7 @@ export default function About() {
                 LinkedIn
               </a>
               <a
-                href="https://github.com/oliverio89"
+                href="https://github.com/victormrngarcia"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="about__social-btn about__social-btn--ghost"

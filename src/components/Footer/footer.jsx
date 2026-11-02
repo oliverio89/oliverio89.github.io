@@ -40,7 +40,7 @@ export default function Footer() {
             <FaLinkedin size={18} />
           </a>
           <a
-            href="https://github.com/oliverio89"
+            href="https://github.com/victormrngarcia"
             target="_blank"
             rel="noopener noreferrer"
             className="footer__social"
@@ -49,7 +49,7 @@ export default function Footer() {
             <FaGithub size={18} />
           </a>
           <a
-            href="mailto:oliverio89@gmail.com"
+            href="mailto:victor.mrngarcia@gmail.com"
             target="_blank"
             rel="noopener noreferrer"
             className="footer__social"

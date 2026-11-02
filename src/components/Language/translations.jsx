@@ -56,7 +56,7 @@ const translations = {
     expTitle: "Experiencia",
     expTitleGradient: "profesional.",
     expDesc:
-      "3+ años construyendo plataformas, enseñando y resolviendo problemas reales con tecnología.",
+      "4+ años construyendo plataformas, enseñando y resolviendo problemas reales con tecnología.",
     loQueHice: "Lo que hice:",
     verEnProduccion: "Ver en producción:",
     actual: "Actual",
@@ -226,7 +226,7 @@ const translations = {
     contactEmailPlaceholder: "tu@email.com",
     contactMessageLabel: "Mensaje",
     contactMessagePlaceholder: "Cuéntame en qué puedo ayudarte...",
-    contactError: "Algo salió mal. Escríbeme a oliverio89@gmail.com",
+    contactError: "Algo salió mal. Escríbeme a victor.mrngarcia@gmail.com",
     contactSending: "Enviando...",
     contactSend: "Enviar",
     contactConnect: "Conectemos",
@@ -357,7 +357,7 @@ const translations = {
     expTitle: "Professional",
     expTitleGradient: "experience.",
     expDesc:
-      "3+ years building platforms, teaching and solving real problems with technology.",
+      "4+ years building platforms, teaching and solving real problems with technology.",
     loQueHice: "What I did:",
     verEnProduccion: "Live:",
     actual: "Current",
@@ -528,7 +528,7 @@ const translations = {
     contactMessageLabel: "Message",
     contactMessagePlaceholder: "How can I help you?",
     contactError:
-      "Something went wrong. Email me directly at oliverio89@gmail.com",
+      "Something went wrong. Email me directly at victor.mrngarcia@gmail.com",
     contactSending: "Sending...",
     contactSend: "Send",
     contactConnect: "Let's connect",
